@@ -1,6 +1,6 @@
 from qtheader import *
 from qtslgui import SLFrame
-from sls import SocialLink
+from libs.sls import SocialLink
 from slinfo import LinkInfo
 
 class SL_creator(QWidget):

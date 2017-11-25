@@ -1,7 +1,7 @@
 from qtheader import *
 import sys
-from logictree import MathGraph
-from action import *
+from libs.logictree import MathGraph
+from libs.action import *
 
 
 class Simulation(QWidget):

@@ -1,8 +1,8 @@
 from qtheader import *
 from PySide.QtGui import QHBoxLayout, QPen, QPainter, QBrush, QScrollArea
 from PySide.QtCore import QPoint, QRectF
-from sls import SocialLink
-from action import Speak
+from libs.sls import SocialLink
+from libs.action import Speak
 import sys
 
 class PrettySL(QWidget):

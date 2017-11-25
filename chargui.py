@@ -1,5 +1,5 @@
 from qtheader import *
-from creatures import Character, Persona
+from libs.creatures import Character, Persona
 
 class char_creator(QWidget):
 
