@@ -1,0 +1,8 @@
+#Ignore only DS_Store
+.DS_Story
+
+#Ignore compiled python
+*.pyc
+
+#Ignore export data
+exportdata/*

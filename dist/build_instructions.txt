@@ -1,0 +1,15 @@
+With spec files in creator/spec/
+
+Mac:
+	pyinstaller -y -—clean spec/guiMac.spec
+	rm -rf build
+	rm -rf dist/qtgui
+
+
+
+Windows:
+	pyinstaller -y --clean spec/guiWin.spec
+	rm -rf build
+
+
+*Be sure to remove everything under resources/data and empty the lists in chars and pers in order properly import dict data when creating distributable versions of the Story Creator.
