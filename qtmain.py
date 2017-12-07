@@ -1,6 +1,6 @@
 #--coding:utf-8--
-from qtheader import *
 import sys
+from qtheader import *
 from qtmainframe import MainFrame
 
 app = QApplication(sys.argv)

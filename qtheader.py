@@ -10,7 +10,7 @@ import libs.json_reader as json_reader
 # any part of this software or the content that it produces.
 #
 # Persona is a registered trademark of ATLUS Inc. The images and text elements provided are
-# their sole possession. This software uses any copy-written material under the clause of 
+# their sole possession. This software uses any copy-written material under the clause of
 # fair use.
 #
 # Persona X Story Creator version 1.0.0.0
