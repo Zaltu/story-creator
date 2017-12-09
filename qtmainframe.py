@@ -1,5 +1,6 @@
-from qtheader import *
-from qtop import OP
+from PySide.QtGui import QWidget, QGridLayout, QLayout, QDesktopWidget
+from gui.qtop import OP
+
 
 class MainFrame(QWidget):
 
@@ -27,7 +28,7 @@ class MainFrame(QWidget):
         self.center()
 
     def center(self):
-        #Center window
+        # Center window
         qr = self.frameGeometry()
         qr.moveCenter(QDesktopWidget().availableGeometry().center())
         self.move(qr.topLeft())
