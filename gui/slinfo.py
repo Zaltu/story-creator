@@ -1,4 +1,7 @@
-from qtheader import *
+from PySide.QtGui import QWidget, QGridLayout, QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton
+from PySide.QtCore import Qt
+from gui.popup import popup
+from libs import json_reader
 
 class LinkInfo(QWidget):
 

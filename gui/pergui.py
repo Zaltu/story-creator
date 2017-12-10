@@ -1,6 +1,8 @@
-from qtheader import *
 import os
-from libs.creatures import Character, Persona
+from PySide.QtGui import QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox, QTextEdit
+from gui.popup import popup
+from libs.creatures import Persona
+from libs import json_reader
 
 
 class per_creator(QWidget):
@@ -155,7 +157,7 @@ class per_creator(QWidget):
         self.cfgrid.addWidget(self.elecO, 6, 6)
         windL = QLabel(self.createFrame, text="Wind")
         self.cfgrid.addWidget(windL, 7, 5)
-        self.windO= QComboBox(self.createFrame)
+        self.windO = QComboBox(self.createFrame)
         self.windO.addItems(resList)
         self.windO.setCurrentIndex(1)
         self.cfgrid.addWidget(self.windO, 7, 6)

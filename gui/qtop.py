@@ -1,8 +1,10 @@
-from qtheader import *
-from chargui import char_creator
-from pergui import per_creator
-from slcontextgui import SL_creator
-from supgui import sup_ui
+from PySide.QtGui import QWidget, QPalette, QGridLayout, QPixmap, QLabel, QPushButton, QSizePolicy
+from PySide.QtCore import Qt
+from gui.chargui import char_creator
+from gui.pergui import per_creator
+from gui.slcontextgui import SL_creator
+from gui.supgui import sup_ui
+from libs import json_reader
 
 class OP(QWidget):
 

@@ -1,5 +1,7 @@
-from qtheader import *
+from PySide.QtGui import QWidget, QGridLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QCheckBox, QComboBox
 from libs.creatures import Character
+from libs import json_reader
+from gui.popup import popup
 
 class char_creator(QWidget):
 

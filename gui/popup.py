@@ -1,4 +1,4 @@
-from qtheader import *
+from PySide.QtGui import QMessageBox
 
 def popup(message, type):
     icon = {"Information":QMessageBox.Information, "Warning":QMessageBox.Warning,

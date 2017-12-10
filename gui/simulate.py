@@ -1,4 +1,5 @@
-from qtheader import *
+from PySide.QtGui import QWidget, QGridLayout, QPushButton, QLabel
+from PySide.QtCore import Qt
 from libs.action import *
 
 

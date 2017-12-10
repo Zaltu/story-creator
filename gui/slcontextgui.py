@@ -1,7 +1,11 @@
-from qtheader import *
-from qtslgui import SLFrame
+from PySide.QtGui import QWidget, QGridLayout, QComboBox, QPushButton, QLabel, QPixmap, QLineEdit
+from PySide.QtCore import Qt
+from gui.qtslgui import SLFrame
+from gui.slinfo import LinkInfo
+from gui.popup import popup
 from libs.sls import SocialLink
-from slinfo import LinkInfo
+from libs import json_reader
+
 
 class SL_creator(QWidget):
 

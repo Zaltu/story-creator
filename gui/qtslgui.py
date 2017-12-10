@@ -1,9 +1,12 @@
-from qtheader import *
+from PySide.QtGui import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
+from PySide.QtCore import Qt
+from gui.simulate import Simulation
+from gui.slview import PrettySL
+from gui.slinfo import LinkInfo
+from gui.popup import popup
 from libs.sls import SocialLink
 from libs.action import *
-from simulate import Simulation
-from slview import PrettySL
-from slinfo import LinkInfo
+from libs import json_reader
 
 class SLFrame(QWidget):
 

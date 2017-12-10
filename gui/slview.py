@@ -1,7 +1,6 @@
-from qtheader import *
-from PySide.QtGui import QHBoxLayout, QPen, QPainter, QBrush, QScrollArea
-from PySide.QtCore import QPoint, QRectF
-from libs.sls import SocialLink
+from PySide.QtGui import QWidget, QGridLayout, QPalette, QLabel, QPushButton, QHBoxLayout, QPen, QPainter, QBrush, QScrollArea
+from PySide.QtCore import Qt, QPoint, QRectF
+from gui.popup import popup
 from libs.action import Speak
 
 class PrettySL(QWidget):
@@ -278,7 +277,7 @@ class TreeWidget(QWidget):
         #ifrom = self.mapToTree(self.needsLine[0][0])
         #ito = self.mapToTree(self.needsLine[0][1])
         #qp.drawLine(ifrom.x(), ifrom.y(), ito.x(), ito.y())
-        alternate = True
+        #alternate = True
         #print self.op.lastButtonPressed
         if self.op.lastButtonPressed is not None:
             pen.setColor(Qt.yellow)

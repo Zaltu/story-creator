@@ -4,8 +4,11 @@ from email.mime.multipart import MIMEMultipart, MIMEBase
 from email.mime.text import MIMEText
 import smtplib
 from glob import glob
-from PySide.QtGui import QFileDialog
-from qtheader import *
+
+from PySide.QtGui import QWidget, QPushButton, QLabel, QGridLayout, QTextEdit, QLineEdit, QCheckBox, QFileDialog
+from PySide.QtCore import Qt
+from gui.popup import popup
+from libs import json_reader
 
 
 class sup_ui(QWidget):
