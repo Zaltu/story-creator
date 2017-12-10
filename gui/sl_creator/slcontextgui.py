@@ -1,7 +1,7 @@
 from PySide.QtGui import QWidget, QGridLayout, QComboBox, QPushButton, QLabel, QPixmap, QLineEdit
 from PySide.QtCore import Qt
-from gui.qtslgui import SLFrame
-from gui.slinfo import LinkInfo
+from gui.sl_creator.qtslgui import SLFrame
+from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
 from libs.sls import SocialLink
 from libs import json_reader

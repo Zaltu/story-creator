@@ -1,8 +1,8 @@
 from PySide.QtGui import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
 from PySide.QtCore import Qt
-from gui.simulate import Simulation
-from gui.slview import PrettySL
-from gui.slinfo import LinkInfo
+from gui.sl_creator.simulate import Simulation
+from gui.sl_creator.slview import PrettySL
+from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
 from libs.sls import SocialLink
 from libs.action import *
