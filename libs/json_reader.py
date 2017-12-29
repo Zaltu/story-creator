@@ -1,7 +1,8 @@
-from creatures import Character
 import os
 import sys
+from glob import glob
 import json
+from libs.creatures import Character
 
 
 def buildPath(fileName):
@@ -23,7 +24,7 @@ def readLink(arcana):
         json_data.close()
         return array
     except Exception as e:
-        print(e)
+        print e
         return {}
 
 
@@ -35,83 +36,47 @@ def readArcDesc(arcana):
 
 
 def writeOne(character):
-    with open(buildPath('data/' + character.getName() + '.json'), 'w') as outfile:
+    with open(buildPath('data/chars/' + character.getName() + '.json'), 'w') as outfile:
         json.dump(character.__dict__, outfile)
     outfile.close()
-    writeCharNames(character.getName())
 
 
 def writeOneP(persona):
-    with open(buildPath('data/' + persona.getName() + '.json'), 'w') as outfile:
+    with open(buildPath('data/pers/' + persona.getName() + '.json'), 'w') as outfile:
         json.dump(persona.__dict__, outfile)
     outfile.close()
-    writePerNames(persona.getName())
 
 
 def readOne(name):
-    with open(buildPath('data/' + name+'.json')) as json_data:
+    with open(buildPath('data/chars/' + name+'.json')) as json_data:
         characterL = json.load(json_data)
     json_data.close()
     return Character(characterL["name"], characterL["desc"], characterL["important"])
 
 
 def readP(fetch):
-    with open(buildPath('data/' + fetch+".json")) as json_data:
+    with open(buildPath('data/pers/' + fetch+".json")) as json_data:
         persona = json.load(json_data)
     json_data.close()
     return persona
 
 
-def writeCharNames(name):
-    list = readCharNames()
-    if name in list:
-        return
-    list.append(name)
-    with open(buildPath('int/' + 'chars.json'), 'w') as outfile:
-        json.dump(list, outfile)
-    outfile.close()
-
-
-def writePerNames(name):
-    list = readPerNames()
-    if name.encode('utf-8') in list:
-        return
-    list.append(name.encode('utf-8'))
-    with open(buildPath('int/' + 'pers.json'), 'w') as outfile:
-        json.dump(list, outfile)
-    outfile.close()
-
-
 def readPerNames():
-    with open(buildPath('int/' + 'pers.json')) as json_data:
-        names = json.load(json_data)
-    json_data.close()
-    return names
+    chars = glob(buildPath('data/pers/*.json'))
+    return [charname.split('.')[0].split("/")[-1] for charname in chars]
 
 
 def deleteChar(name):
-    list = readCharNames()
-    list.remove(name)
-    with open(buildPath('int/' + 'chars.json'), 'w') as outfile:
-        json.dump(list, outfile)
-    outfile.close()
-    os.remove(buildPath('data/' + name + '.json'))
+    os.remove(buildPath('data/chars/' + name + '.json'))
 
 
 def deletePer(name):
-    list = readPerNames()
-    list.remove(name)
-    with open(buildPath('int/' + 'pers.json'), 'w') as outfile:
-        json.dump(list, outfile)
-    outfile.close()
-    os.remove(buildPath('data/'+name + '.json'))
+    os.remove(buildPath('data/pers/' + name + '.json'))
 
 
 def readCharNames():
-    with open(buildPath('int/' + 'chars.json')) as json_data:
-        names = json.load(json_data)
-    json_data.close()
-    return names
+    chars = glob(buildPath('data/chars/*.json'))
+    return [charname.split('.')[0].split("/")[-1] for charname in chars]
 
 
 def data_list(fetch):
