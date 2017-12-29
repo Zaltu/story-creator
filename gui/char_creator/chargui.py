@@ -66,7 +66,8 @@ class char_creator(QWidget):
         self.infoT.clear()
         if name == "New":
             return
-        charTL = json_reader.readOne(name)
+        characterL = json_reader.readOne(name, 'chars')
+        charTL = Character(characterL["name"], characterL["desc"], characterL["important"])
         if charTL.getImportant():
             self.importantB.toggle()
         self.nameT.setText(charTL.getName())
@@ -94,7 +95,7 @@ class char_creator(QWidget):
             print type(e)
             popup("Sorry, unicode characters are not supported.", "Critical")
             return
-        json_reader.writeOne(toWrite)
+        json_reader.writeOne(toWrite, 'chars')
         if toWrite.getName() not in [self.allChars.itemText(i) for i in range(self.allChars.count())]:
             self.allChars.insertItem(self.allChars.count()-1, self.nameT.text())
             self.allChars.setCurrentIndex(self.allChars.count()-2)
