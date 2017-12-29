@@ -334,7 +334,7 @@ class per_creator(QWidget):
         print "Changed to edit frame"
 
     def save(self):
-        if os.path.exists(json_reader.buildPath("data/"+self.nameT.text()+".json")):
+        if os.path.exists(json_reader.buildPath("data/pers/"+self.nameT.text()+".json")):
             if not popup("Override existing Persona "+self.nameT.text()+"?", "Question"):
                 return
         print "Saving"
@@ -359,7 +359,7 @@ class per_creator(QWidget):
             print "No Name, not saved"
             return
         toWrite = Persona(self.nameT.text(), self.arcO.currentText(), self.levelT.text(), self.textT.toPlainText(), spellDeck, self.lsdic, stats, res, [self.listEL1.currentText(), self.listEL2.currentText()])
-        json_reader.writeOneP(toWrite)
+        json_reader.writeOne(toWrite, 'pers')
         temp = self.nameT.text()
         if (temp not in [self.listP.item(i).text() for i in range(self.listP.count())]):
             self.listP.addItem(temp)

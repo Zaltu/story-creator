@@ -62,26 +62,37 @@ class sup_ui(QWidget):
         for file in files:
             copyOn = True
             if file.endswith(".json"):
-                if os.path.exists(os.path.join(json_reader.buildPath("data"), file)):
-                    if popup("File " + file[:len(file)-5] + " already exists. Overwrite?", "Warning"):
-                        os.remove(json_reader.buildPath("data/"+file))
-                    else:
-                        copyOn = False
-                if copyOn:
-                    print "Copying valid file " + file
-                    copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data"))
-                    if "_link" not in file:
-                        try:#Ugly AF
-                            json_reader.readOne(file[:len(file)-5])
-                        except:
-                            print "Not a Character"
-                            try:
-                                json_reader.readP(file[:len(file)-5])
-                            except Exception as e:
-                                print "Not a Persona"
-                                print e
+                print "Copying valid file " + file
+                if "_link" in file:
+                    if self.checkOverwrite(file):
+                        copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data"))
+                else:
+                    try:#Ugly AF
+                        characterL = json_reader.readOne(file[:len(file)-5], 'chars')
+                        assert "name" in characterL and "important" in characterL
+                        if self.checkOverwrite(file, 'chars'):
+                            copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data/chars"))
+                    except:
+                        print "Not a Character"
+                        try:
+                            personaL = json_reader.readOne(file[:len(file)-5], 'pers')
+                            assert "name" in personaL and "arcana" in personaL
+                            if self.checkOverwrite(file, 'pers'):
+                                copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data/pers"))
+                        except Exception as e:
+                            print "Not a Persona"
+                            print e
         print "Successfully copied files"
         popup("Files imported successfully!", "Information")
+
+
+    def checkOverwrite(self, file, ctype=''):
+        if ctype:
+            ctype = ctype+"/"
+        if os.path.exists(os.path.join(json_reader.buildPath("data"), file)):
+            if popup("File " + file[:len(file)-5] + " already exists. Overwrite?", "Warning"):
+                os.remove(json_reader.buildPath("data/%s%s"%(ctype, file)))
+
 
     def export(self):
         fileBrowser = QFileDialog()
@@ -171,7 +182,7 @@ class emailFrame(QWidget):
         msg['Subject'] = str(self.subject.text())
         if self.addFiles.isChecked():
             print "Adding files"
-            fileNames = glob(json_reader.buildPath("data/*.json"))
+            fileNames = glob(json_reader.buildPath("data/*.json"))+glob(json_reader.buildPath("data/pers/*.json"))+glob(json_reader.buildPath("data/chars/*.json"))
             print fileNames
             for file in fileNames:
                 part = MIMEBase('application', "octet-stream")

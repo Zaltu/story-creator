@@ -35,30 +35,17 @@ def readArcDesc(arcana):
     return array[arcana]
 
 
-def writeOne(character):
-    with open(buildPath('data/chars/' + character.getName() + '.json'), 'w') as outfile:
-        json.dump(character.__dict__, outfile)
+def writeOne(entity, creatureType):
+    with open(buildPath('data/%s/%s.json' % (creatureType, entity.getName())), 'w') as outfile:
+        json.dump(entity.__dict__, outfile)
     outfile.close()
 
 
-def writeOneP(persona):
-    with open(buildPath('data/pers/' + persona.getName() + '.json'), 'w') as outfile:
-        json.dump(persona.__dict__, outfile)
-    outfile.close()
-
-
-def readOne(name):
-    with open(buildPath('data/chars/' + name+'.json')) as json_data:
-        characterL = json.load(json_data)
+def readOne(name, creatureType):
+    with open(buildPath('data/%s/%s.json' % (creatureType, name))) as json_data:
+        entity = json.load(json_data)
     json_data.close()
-    return Character(characterL["name"], characterL["desc"], characterL["important"])
-
-
-def readP(fetch):
-    with open(buildPath('data/pers/' + fetch+".json")) as json_data:
-        persona = json.load(json_data)
-    json_data.close()
-    return persona
+    return entity
 
 
 def readPerNames():
