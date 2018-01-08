@@ -278,7 +278,7 @@ class per_creator(QWidget):
 
 
     def loadPer(self, name):
-        data = json_reader.readP(name)
+        data = json_reader.readOne(name, 'pers')
         self.nameT.setText(data["name"])
         self.textT.setText(data["desc"])
         self.strT.setText(data["stats"][0])
