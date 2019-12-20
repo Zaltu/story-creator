@@ -1,4 +1,4 @@
-from libs.logictree import *
+from libs.logictree import MathGraph
 from libs import json_reader
 
 class SocialLink():
