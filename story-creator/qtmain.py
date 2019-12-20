@@ -1,4 +1,4 @@
-# --coding:utf-8--
+#pylint: disable=no-name-in-module
 import sys
 from PySide2.QtWidgets import QApplication
 from PySide2.QtGui import QIcon

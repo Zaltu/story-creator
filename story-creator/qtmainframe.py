@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLayout, QDesktopWidget
 from gui.qtop import OP
 
