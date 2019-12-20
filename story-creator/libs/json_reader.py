@@ -8,7 +8,7 @@ from libs.creatures import Character
 def buildPath(fileName):
     if getattr(sys, 'frozen', False):
         return os.path.join(os.path.dirname(sys.executable), str(fileName))
-    return fileName
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), "../", fileName))
 
 
 def writeLink(link):
