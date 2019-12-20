@@ -1,5 +1,5 @@
-from PySide.QtGui import QWidget, QGridLayout, QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton
-from PySide.QtCore import Qt
+from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton
+from PySide2.QtCore import Qt
 from gui.popup import popup
 from libs import json_reader
 
@@ -21,14 +21,14 @@ class LinkInfo(QWidget):
         self.levang = {}
         elev = []
 
-        for key, cutscene in self.link.cutscenes.iteritems():
+        for key, cutscene in self.link.cutscenes.items():
             if key[:key.index("_")] in self.levang:
                 self.levang[key[:key.index("_")]].append(key[key.index("_")+1:])
             else:
                 self.levang[key[:key.index("_")]] = [key[key.index("_")+1:]]
             if key[:key.index("_")] not in elev:
                 elev.append(key[:key.index("_")])
-        for level, angle in self.levang.iteritems():
+        for level, angle in self.levang.items():
             angle.sort(key=lambda angle: (int)(angle))
         elev.sort(key=lambda level: (int)(level))
         infoL = QLabel(self, text="Social Link Information")
@@ -109,7 +109,7 @@ class LinkInfo(QWidget):
 
     def saveinfo(self):
         try:
-            for angle, data in self.reqs.textboxes.iteritems():
+            for angle, data in self.reqs.textboxes.items():
                 (int)(data.text())
                 if data.text() != "":
                     if self.level.currentText() not in  self.link.requiredPoints:
@@ -117,13 +117,13 @@ class LinkInfo(QWidget):
                     if angle not in self.link.requiredPoints[self.level.currentText()]:
                         self.link.requiredPoints[self.level.currentText()][angle] = {}
                     self.link.requiredPoints[self.level.currentText()][angle]['points'] = (int)(data.text())
-            for angle, data in self.reqs.courages.iteritems():
+            for angle, data in self.reqs.courages.items():
                 self.link.requiredPoints[self.level.currentText()][angle]['courage'] = (int)(data.currentText())
-            for angle, data in self.reqs.charms.iteritems():
+            for angle, data in self.reqs.charms.items():
                 self.link.requiredPoints[self.level.currentText()][angle]['charm'] = (int)(data.currentText())
-            for angle, data in self.reqs.acads.iteritems():
+            for angle, data in self.reqs.acads.items():
                 self.link.requiredPoints[self.level.currentText()][angle]['acad'] = (int)(data.currentText())
-            for angle, data in self.reqs.ultis.iteritems():
+            for angle, data in self.reqs.ultis.items():
                 self.link.finalpersona[angle] = data.currentText()
             self.link.pseudoname = self.pseudoname.text()
             self.link.info = self.aitext.toPlainText()
@@ -145,8 +145,8 @@ class LinkInfo(QWidget):
         try:
             self.reqs.close()
         except Exception as e:
-            print e
-            print "Can't close oudated req widget"
+            print(e)
+            print("Can't close oudated req widget")
         if self.level.currentText() == "":
             return
         if self.level.itemText(0) == "":

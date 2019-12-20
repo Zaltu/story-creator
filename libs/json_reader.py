@@ -24,7 +24,7 @@ def readLink(arcana):
         json_data.close()
         return array
     except Exception as e:
-        print e
+        print(e)
         return {}
 
 
@@ -71,9 +71,4 @@ def data_list(fetch):
         temp = json.load(json_data)
     json_data.close()
     data = temp[fetch]
-    noU = []
-    for item in data:
-        if isinstance(item, unicode):
-            item = item.encode('utf-8')
-        noU.append(item)
-    return noU
+    return data

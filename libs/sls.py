@@ -1,5 +1,5 @@
-from logictree import *
-import json_reader
+from libs.logictree import *
+from libs import json_reader
 
 class SocialLink():
 
@@ -20,8 +20,8 @@ class SocialLink():
         try:
             fullLink = json_reader.readLink(self.arcana)
             tempdic = fullLink["cutscenes"]
-            print tempdic
-            for id, graph in tempdic.iteritems():
+            print(tempdic)
+            for id, graph in tempdic.items():
                 self.cutscenes[id] = MathGraph(graph["id"]).loadGraph(graph["items"])
             #if statements necessary for backwards-compatibility
             if 'pseudoname' in fullLink:
@@ -35,27 +35,27 @@ class SocialLink():
             if 'cutinfo' in fullLink:
                 self.cutinfo = fullLink['cutinfo']
         except:
-            print "No existing link"
-        print self.cutscenes
-        print "Loaded"
+            print("No existing link")
+        print(self.cutscenes)
+        print("Loaded")
 
     def getLink(self, level, angle):#Not used
         try:
             return self.cutscenes.pop(str(level)+"_"+str(angle))
         except:
-            print "No such link"
+            print("No such link")
             return 0
 
     def startLink(self, level, angle):
         try:
             toreturn = self.cutscenes[(str(level)+"_"+str(angle))]
-            print "Link already exists!"
+            print("Link already exists!")
         except:
             toreturn = self.cutscenes[str(level)+"_"+str(angle)] = MathGraph(self.arcana+str(level)+"_"+str(angle))
-            print toreturn.items
+            print(toreturn.items)
 
         return toreturn
 
     def save(self):
         json_reader.writeLink(self)
-        print "Saved to to file"
+        print("Saved to to file")

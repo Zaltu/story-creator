@@ -1,5 +1,5 @@
-from PySide.QtGui import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
-from PySide.QtCore import Qt
+from PySide2.QtWidgets import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
+from PySide2.QtCore import Qt
 from gui.sl_creator.simulate import Simulation
 from gui.sl_creator.slview import PrettySL
 from gui.sl_creator.slinfo import LinkInfo
@@ -126,13 +126,13 @@ class SLBase(QWidget):
         self.grid.addWidget(self.actOM, 0, 0)
     # L for local. wtf overload?     
     def changeFrameL(self):
-        print self.actOM.currentText()
+        print(self.actOM.currentText())
         if self.actOM.currentText() is not "":
-            print "Set to load"
+            print("Set to load")
             self.load = self.op.link.getItem(self.actions.index(self.actOM.currentText()))
-            print self.load
+            print(self.load)
         self.op.i = self.actions.index(self.actOM.currentText())
-        print "Current index: " + str(self.op.i)
+        print("Current index: " + str(self.op.i))
         self.close()
         CreationContainer(self.mainframe, self.op, self.load)
 
@@ -231,7 +231,7 @@ class CreationContainer(QWidget):
     def follow(self):
         if not self.existing_connections.currentItem() or self.existing_connections.currentItem().text() == "":
             return
-        print [self.next.itemText(i) for i in range(self.next.count())].index(self.existing_connections.currentItem().text())
+        print([self.next.itemText(i) for i in range(self.next.count())].index(self.existing_connections.currentItem().text()))
         self.next.setCurrentIndex([self.next.itemText(i) for i in range(self.next.count())].index(self.existing_connections.currentItem().text()))
         self.op.i = self.actions.index(self.next.currentText())
         self.connect()
@@ -243,18 +243,18 @@ class CreationContainer(QWidget):
             return
         if self.next.currentText() == "New element":
             self.op.link.addRelation(self.op.i, self.op.link.size())
-            print "Linked to index " + str(self.op.link.size())
+            print("Linked to index " + str(self.op.link.size()))
             self.op.i = self.op.link.size()
             self.load = 0
             self.changeFrame(0)
             self.updateElementList()
         else:
             self.op.link.addRelation(self.op.i, self.actions.index(self.next.currentText()))
-            print "Linked to index " + str(self.actions.index(self.next.currentText()))
+            print("Linked to index " + str(self.actions.index(self.next.currentText())))
         self.populateExistingConnections()
 
     def connect(self):
-        print self.next.currentText()
+        print(self.next.currentText())
         if self.next.currentText() == "New element":
             self.load = 0
             self.changeFrame(0)
@@ -273,8 +273,8 @@ class CreationContainer(QWidget):
             self.changeFrame(0)
 
     def checkCached(self):
-        print len(self.op.link.items)-1
-        print self.op.i
+        print(len(self.op.link.items)-1)
+        print(self.op.i)
         if self.op.link.getItem(self.op.i) == []:
             return False
         return True
@@ -287,7 +287,7 @@ class CreationContainer(QWidget):
         self.next.setCurrentIndex(len(self.actions)-1)
 
     def changeFrame(self, something):
-        print "Changed to " + self.actOM.currentText()
+        print("Changed to " + self.actOM.currentText())
         try:
             self.window.close()
         except AttributeError:
@@ -325,22 +325,22 @@ class InfoFrame(QWidget):
         self.infoBox.setFixedSize(300, 150)
         self.grid.addWidget(self.infoBox, 1, 0, 1, 5)
 
-        print self.load
+        print(self.load)
         if self.load != 0:
             try:
                 self.infoBox.setText(self.load.getText())
             except Exception as e:
-                print e
+                print(e)
 
 
     def save(self):
-        print "Saving"
+        print("Saving")
         infoSlide = Info()
-        print "..."
+        print("...")
         infoSlide.setText(self.infoBox.toPlainText())
-        print self.op.op.i
+        print(self.op.op.i)
         self.op.op.link.addItem(infoSlide, self.op.op.i)
-        print "Saved"
+        print("Saved")
         self.op.op.linkstored.setLink(self.op.op.link, self.op.op.level, self.op.op.angle)
         self.op.op.linkstored.save()
         self.op.updateElementList()
@@ -432,7 +432,7 @@ class SpeakFrame(QWidget):
                 self.speaker.setCurrentIndex(self.characs.index(self.load.getSpeaker()))
                 self.emotion.setCurrentIndex(self.s_emotions.index(self.load.emotion))
                 first = True
-                for arcana, points in self.load.getPoints().iteritems():
+                for arcana, points in self.load.getPoints().items():
                     if first:
                         first = False
                     else:
@@ -440,7 +440,7 @@ class SpeakFrame(QWidget):
                     self.pointvec[-1].setText(str(points))
                     self.pointvar[-1].setCurrentIndex(self.arcanas.index(arcana))
                 first = True
-                for arcana, angle in self.load.getAngle().iteritems():
+                for arcana, angle in self.load.getAngle().items():
                     if first:
                         first = False
                     else:
@@ -448,7 +448,7 @@ class SpeakFrame(QWidget):
                     self.anglevec[-1].setText(str(angle))
                     self.anglevar[-1].setCurrentIndex(self.arcanas.index(arcana))
             except Exception as e:
-                print e
+                print(e)
 
 
 
@@ -473,8 +473,8 @@ class SpeakFrame(QWidget):
         self.addAAtIndex += 1
 
     def save(self):
-        print "Saving"
-        print "..."
+        print("Saving")
+        print("...")
         speakSlide = Speak()
         speakSlide.setText(self.infoBox.toPlainText())
         speakSlide.setSpeaker(self.speaker.currentText())
@@ -486,7 +486,7 @@ class SpeakFrame(QWidget):
                     speakSlide.putPoints(self.pointvar[i].currentText(), amount)
                 except:
                     popup("All Points must be integers.\nTo discard one line, empty the text field and set the arcana to blank.", "Critical")
-                    print "Amount must be an integer"
+                    print("Amount must be an integer")
         for i in xrange(len(self.anglevec)):
             if self.anglevar[i].currentText() != "":
                 try:
@@ -494,9 +494,9 @@ class SpeakFrame(QWidget):
                     speakSlide.putAngle(self.anglevar[i].currentText(), amount)
                 except:
                     popup("All Points and Angles must be integers.\nTo discard one line, set empty the text field and set the arcana to blank.", "Critical")
-                    print "Amount must be an integer"
+                    print("Amount must be an integer")
         self.op.op.link.addItem(speakSlide, self.op.op.i)
-        print "Saved"
+        print("Saved")
         self.op.op.linkstored.setLink(self.op.op.link, self.op.op.level, self.op.op.angle)
         self.op.op.linkstored.save()
         self.op.updateElementList()
@@ -580,15 +580,14 @@ class CameraFrame(QWidget):
                 self.ly.setText(str(la[1]))
                 self.lz.setText(str(la[2]))
             except Exception as e:
-                print e
-                pass
+                print(e)
 
 
     def save(self):
-        print "Saving"
+        print("Saving")
         cameraSlide = Camera()
         cameraSlide.setPlace(self.locationO.currentText())
-        print "..."
+        print("...")
         try:
             (int)(self.lx.text())
             (int)(self.ly.text())
@@ -598,13 +597,13 @@ class CameraFrame(QWidget):
             (int)(self.cz.text())
         except:
             popup("Camera position (x, y, z) and look direction (x, y, z) must be entered as whole numbers", "Critical")
-            print "Must be an integer"
+            print("Must be an integer")
             return
 
         cameraSlide.setLookAt(((int)(self.lx.text()), (int)(self.ly.text()), (int)(self.lz.text())))
         cameraSlide.setCameraPosition(((int)(self.cx.text()), (int)(self.cy.text()), (int)(self.cz.text())))
         self.op.op.link.addItem(cameraSlide, self.op.op.i)
-        print "Saved"
+        print("Saved")
         self.op.op.linkstored.setLink(self.op.op.link, self.op.op.level, self.op.op.angle)
         self.op.op.linkstored.save()
         self.op.updateElementList()
@@ -664,28 +663,27 @@ class MoveFrame(QWidget):
                 self.lx.setText(self.load.getDestination()[0])
                 self.ly.setText(self.load.getDestination()[1])
             except Exception as e:
-                print e
+                print(e)
 
 
     def save(self):
-        print "Saving"
+        print("Saving")
         moveSlide = Movement()
         moveSlide.setSubject(self.speaker.currentText())
         moveSlide.setAnimation(self.ani.currentText())
-        print "..."
+        print("...")
         try:
             (int)(self.lx.text())
             (int)(self.ly.text())
         except:
             popup("Destination coordinates (x, y) must be entered as integers", "Critical")
-            print "Numbers must be integers"
+            print("Numbers must be integers")
             return
 
         moveSlide.setDestination(((int)(self.lx.text()), (int)(self.ly.text())))
         self.op.op.link.addItem(moveSlide, self.op.op.i)
-        print "Saved"
+        print("Saved")
         self.op.op.linkstored.setLink(self.op.op.link, self.op.op.level, self.op.op.angle)
         self.op.op.linkstored.save()
         self.op.updateElementList()
         popup("Saved!", "Information")
-        

@@ -22,9 +22,9 @@ def load(action):
         if 'emotion' in action:
             o.emotion = action['emotion']
         o.setText(action["text"])
-        for arcana, points in action["points"].iteritems():
+        for arcana, points in action["points"].items():
             o.putPoints(arcana, points)
-        for arcana, angle in action["angle"].iteritems():
+        for arcana, angle in action["angle"].items():
             o.putAngle(arcana, angle)
         return o
     except:

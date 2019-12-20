@@ -1,5 +1,6 @@
-from PySide.QtGui import QWidget, QGridLayout, QPalette, QLabel, QPushButton, QHBoxLayout, QPen, QPainter, QBrush, QScrollArea
-from PySide.QtCore import Qt, QPoint, QRectF
+from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QHBoxLayout, QScrollArea
+from PySide2.QtGui import QPalette, QPen, QPainter, QBrush
+from PySide2.QtCore import Qt, QPoint, QRectF
 from gui.popup import popup
 from libs.action import Speak
 
@@ -55,11 +56,11 @@ class PrettySL(QWidget):
         self.show()
 
     def trackIndex(self, index):
-        print "Called"
+        print("Called")
         self.needsRefresh = True
         self.lastButtonPressed = index
         self.subtree = self.graph.subTree(index)
-        print self.subtree
+        print(self.subtree)
         self.initInfoUI(index)
 
     def deleteSubtree(self):
@@ -225,13 +226,13 @@ class TreeWidget(QWidget):
         for element in self.map:
             self.mapped[element[0]] = element[1]
 
-        print self.map
-        print ""
-        print ""
-        print self.needsLine
-        print ""
-        print ""
-        print self.depthTracker
+        print(self.map)
+        print()
+        print()
+        print(self.needsLine)
+        print()
+        print()
+        print(self.depthTracker)
 
         self.placedInLine = {}
         self.lineWidgets = {}
@@ -246,15 +247,15 @@ class TreeWidget(QWidget):
             tempB.clicked.connect(lambda ind=element[0]: self.op.trackIndex(ind))
             self.lineWidgets[element[1]][1].addWidget(tempB)
             self.buttons[element[0]] = tempB
-        for lineNumber, widget in self.lineWidgets.iteritems():
+        for lineNumber, widget in self.lineWidgets.items():
             self.grid.addWidget(widget[0], lineNumber, 0)
 
 
     def nextRow(self, currentAction, currentDepth):
         for relation in currentAction[1:len(currentAction)]:
             if relation not in self.processed:
-                print self.processed
-                print (relation, currentDepth)
+                print(self.processed)
+                print(relation, currentDepth)
                 self.processed.append(relation)
                 self.map.append((relation, currentDepth))
                 try:
@@ -278,7 +279,7 @@ class TreeWidget(QWidget):
         #ito = self.mapToTree(self.needsLine[0][1])
         #qp.drawLine(ifrom.x(), ifrom.y(), ito.x(), ito.y())
         #alternate = True
-        #print self.op.lastButtonPressed
+        #print(self.op.lastButtonPressed)
         if self.op.lastButtonPressed is not None:
             pen.setColor(Qt.yellow)
             qp.setPen(pen)

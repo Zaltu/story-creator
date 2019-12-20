@@ -1,5 +1,6 @@
-from PySide.QtGui import QWidget, QGridLayout, QComboBox, QPushButton, QLabel, QPixmap, QLineEdit
-from PySide.QtCore import Qt
+from PySide2.QtWidgets import QWidget, QGridLayout, QComboBox, QPushButton, QLabel, QLineEdit
+from PySide2.QtGui import QPixmap
+from PySide2.QtCore import Qt
 from gui.sl_creator.qtslgui import SLFrame
 from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
@@ -91,7 +92,7 @@ class SL_creator(QWidget):
         try:
                 self.delang.close()
         except:
-            print "Failed to close delang"
+            print("Failed to close delang")
         self.angs = []
         try:
             tempLink = json_reader.readLink(str(self.arcSel.currentText()))
@@ -101,7 +102,7 @@ class SL_creator(QWidget):
         except:
             pass
         if self.angs:
-            print "There are angles for this level"
+            print("There are angles for this level")
             self.delang = QPushButton(self, text="Delete Angle")
             self.delang.clicked.connect(self.deleteangle)
             self.grid.addWidget(self.delang, 4, 2, 1, 2)
@@ -123,17 +124,17 @@ class SL_creator(QWidget):
             self.angleOM.setCurrentIndex(self.angleOM.count()-1)
             self.newAng.clear()
         except Exception as e:
-            print e
+            print(e)
             popup("The Angle must be an integer", "Critical")
-            print "Angle must be an integer"
+            print("Angle must be an integer")
 
     def deleteangle(self):
         if not popup("WARNING!!!\n\nThis will COMPLETELY ERASE this cutscene. It is HIGHLY RECOMMENDED that you back up your data by going to the Support/Contact page and choose \"Export\".", "Warning"):
             return
         link = SocialLink(self.arcSel.currentText())
-        print link.cutscenes
+        print(link.cutscenes)
         key = self.levelOM.currentText()[self.levelOM.currentText().index(" ")+1:] + "_" + self.angleOM.currentText()[self.angleOM.currentText().index(" ")+1:]
-        print key
+        print(key)
         if key in link.cutscenes:
             link.cutscenes.pop(key)
             link.save()
@@ -141,8 +142,8 @@ class SL_creator(QWidget):
         if self.angleOM.count() == 0:
             self.angleOM.addItem("No angles")
             self.delang.close()
-        print link.cutscenes
-        print "Deleted"
+        print(link.cutscenes)
+        print("Deleted")
 
     def showText(self):
         temp = [self.arcSel.itemText(i) for i in range(self.arcSel.count())]
@@ -169,10 +170,10 @@ class SL_creator(QWidget):
             return
         enter_level = str(self.levelOM.currentText())[str(self.levelOM.currentText()).index(" ")+1:]
         enter_angle = str(self.angleOM.currentText())[str(self.angleOM.currentText()).index(" ")+1:]
-        print "Entered SL creation mode for arcana " + str(self.arcSel.currentText())
+        print("Entered SL creation mode for arcana " + str(self.arcSel.currentText()))
         #self.destroyContext()
         self.mainframe.changeState(SLFrame(self.mainframe, self, str(self.arcSel.currentText()), (int)(enter_level), (int)(enter_angle)))
 
     def back(self):
-        print "Returned to main screen"
+        print("Returned to main screen")
         self.mainframe.changeState(self.op)

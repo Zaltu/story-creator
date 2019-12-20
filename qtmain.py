@@ -1,6 +1,7 @@
 # --coding:utf-8--
 import sys
-from PySide.QtGui import QApplication, QIcon
+from PySide2.QtWidgets import QApplication
+from PySide2.QtGui import QIcon
 from libs import json_reader
 from qtmainframe import MainFrame
 

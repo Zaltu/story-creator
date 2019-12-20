@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 import smtplib
 from glob import glob
 
-from PySide.QtGui import QWidget, QPushButton, QLabel, QGridLayout, QTextEdit, QLineEdit, QCheckBox, QFileDialog
-from PySide.QtCore import Qt
+from PySide2.QtWidgets import QWidget, QPushButton, QLabel, QGridLayout, QTextEdit, QLineEdit, QCheckBox, QFileDialog
+from PySide2.QtCore import Qt
 from gui.popup import popup
 from libs import json_reader
 
@@ -53,16 +53,16 @@ class sup_ui(QWidget):
         if fileBrowser.exec_():
             dir = fileBrowser.selectedFiles()
         else:
-            print "Cancelled"
+            print("Cancelled")
             return
-        print "Copying data from "+str(dir[0])
+        print("Copying data from "+str(dir[0]))
         files = os.listdir(str(dir[0]))
         copyOn = True
-        print files
+        print(files)
         for file in files:
             copyOn = True
             if file.endswith(".json"):
-                print "Copying valid file " + file
+                print("Copying valid file " + file)
                 if "_link" in file:
                     if self.checkOverwrite(file):
                         copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data"))
@@ -73,16 +73,16 @@ class sup_ui(QWidget):
                         if self.checkOverwrite(file, 'chars'):
                             copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data/chars"))
                     except:
-                        print "Not a Character"
+                        print("Not a Character")
                         try:
                             personaL = json_reader.readOne(file[:len(file)-5], 'pers')
                             assert "name" in personaL and "arcana" in personaL
                             if self.checkOverwrite(file, 'pers'):
                                 copy(os.path.join(str(dir[0]), file), json_reader.buildPath("data/pers"))
                         except Exception as e:
-                            print "Not a Persona"
-                            print e
-        print "Successfully copied files"
+                            print("Not a Persona")
+                            print(e)
+        print("Successfully copied files")
         popup("Files imported successfully!", "Information")
 
 
@@ -102,16 +102,16 @@ class sup_ui(QWidget):
         if fileBrowser.exec_():
             dir = fileBrowser.selectedFiles()
         else:
-            print "Cancelled"
+            print("Cancelled")
             return
-        print "Copying data to "+str(dir[0])+"/exportdata"
+        print("Copying data to "+str(dir[0])+"/exportdata")
         try:
             copytree(json_reader.buildPath("data"), str(dir[0])+"/exportdata")
         except Exception as e:
-            print e
+            print(e)
             popup("Error in copying files. There is a file in the selected directory that has the same name as a Story Creator file.\n\nFiles are copied to "+str(dir[0])+"/exportdata"+". Please ensure this directory does not already exist.", "Critical")
             return
-        print "Successfully copied files"
+        print("Successfully copied files")
         popup("Files exported successfully!", "Information")
 
     def contactF(self):
@@ -181,9 +181,9 @@ class emailFrame(QWidget):
         msg['To'] = "swwouf@hotmail.com"
         msg['Subject'] = str(self.subject.text())
         if self.addFiles.isChecked():
-            print "Adding files"
+            print("Adding files")
             fileNames = glob(json_reader.buildPath("data/*.json"))+glob(json_reader.buildPath("data/pers/*.json"))+glob(json_reader.buildPath("data/chars/*.json"))
-            print fileNames
+            print(fileNames)
             for file in fileNames:
                 part = MIMEBase('application', "octet-stream")
                 part.set_payload(open(file, "rb").read())
@@ -198,7 +198,7 @@ class emailFrame(QWidget):
         s.login("personaxdevteam@hotmail.com", 'PersonaX')
         try:
             s.sendmail(msg['From'], msg['To'], msg.as_string())
-            print "Message sent successfully"
+            print("Message sent successfully")
             popup("Email was sent! Thank you!", "Information")
             s.quit()
             return
@@ -207,7 +207,7 @@ class emailFrame(QWidget):
             s.quit()
             return
         except Exception as e:
-            print e
+            print(e)
             popup("Email failed to send, but not sure why...", "Critical")
 
 

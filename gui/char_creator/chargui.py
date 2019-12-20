@@ -1,4 +1,4 @@
-from PySide.QtGui import QWidget, QGridLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QCheckBox, QComboBox
+from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QCheckBox, QComboBox
 from libs.creatures import Character
 from libs import json_reader
 from gui.popup import popup
@@ -6,7 +6,7 @@ from gui.popup import popup
 class char_creator(QWidget):
 
     def __init__(self, mainframe, op):
-        print "Starting..."
+        print("Starting...")
         QWidget.__init__(self)
         self.mainframe = mainframe
         self.op = op
@@ -59,7 +59,7 @@ class char_creator(QWidget):
         grid.addWidget(self.allChars, 4, 4)
 
     def loadChar(self, name):
-        print "Loading..."
+        print("Loading...")
         if self.importantB.isChecked():
             self.importantB.toggle()
         self.nameT.clear()
@@ -72,12 +72,12 @@ class char_creator(QWidget):
             self.importantB.toggle()
         self.nameT.setText(charTL.getName())
         self.infoT.setText(charTL.getDesc())
-        print "Loaded character " + self.allChars.currentText()
+        print("Loaded character " + self.allChars.currentText())
 
     def remove(self):
         if not popup("Are you certain you want to completely remove this character?\n(Cannot be undone)", "Warning"):
             return
-        print "Removing character " + self.allChars.currentText()
+        print("Removing character " + self.allChars.currentText())
         json_reader.deleteChar(self.allChars.currentText())
         self.allChars.removeItem(self.allChars.currentIndex())
         self.allChars.setCurrentIndex(self.allChars.count()-1)
@@ -87,19 +87,19 @@ class char_creator(QWidget):
         if self.nameT.text() in ["New", ""]:
             popup("Sorry, your character cannot be called \""+self.nameT.text()+"\". That is a reserved keyword (and it's also a dumb name)", "Critical")
             return
-        print "Saving"
+        print("Saving")
         try:
             toWrite = Character(self.nameT.text(), self.infoT.toPlainText(), self.importantB.isChecked())
         except UnicodeEncodeError as e:
-            print e
-            print type(e)
+            print(e)
+            print(type(e))
             popup("Sorry, unicode characters are not supported.", "Critical")
             return
         json_reader.writeOne(toWrite, 'chars')
         if toWrite.getName() not in [self.allChars.itemText(i) for i in range(self.allChars.count())]:
             self.allChars.insertItem(self.allChars.count()-1, self.nameT.text())
             self.allChars.setCurrentIndex(self.allChars.count()-2)
-        print "Saved"
+        print("Saved")
 
     def back(self):
         self.mainframe.changeState(self.op)

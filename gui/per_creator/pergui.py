@@ -1,5 +1,5 @@
 import os
-from PySide.QtGui import QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox, QTextEdit
+from PySide2.QtWidgets import QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox, QTextEdit
 from gui.popup import popup
 from libs.creatures import Persona
 from libs import json_reader
@@ -242,14 +242,14 @@ class per_creator(QWidget):
         self.cfgrid.addWidget(self.lslevel, 1, 8)
 
     def addLS(self):
-        print "Adding learned spell"
+        print("Adding learned spell")
         self.chosenSpell = self.lsSpellO.currentText()
         try:
             self.lstext = (int)(self.lslevel.text())
             if self.lstext <= (int)(self.levelT.text()):
                 raise Exception("")
             if not (self.chosenSpell == ""):
-                print "Ok"
+                print("Ok")
                 self.lsdic[self.chosenSpell] = self.lslevel.text()
                 self.listLS.addItem(self.chosenSpell + " at level " + self.lslevel.text())
                 self.lslevel.setText("")
@@ -257,14 +257,14 @@ class per_creator(QWidget):
                 return
         except:
             popup("You must enter a level that is greater than the Persona's level.", "Critical")
-            print "Not an integer or level smaller than Persona's level, not saved"
+            print("Not an integer or level smaller than Persona's level, not saved")
             return
         popup("You must choose a spell", "Critical")
-        print "You must choose a spell"
+        print("You must choose a spell")
 
 
     def delLS(self):
-        print "Deleting learned spell"
+        print("Deleting learned spell")
         key = ""
         i = 0
         while len(self.listLS.currentItem().text()) > i:
@@ -272,8 +272,8 @@ class per_creator(QWidget):
                 break
             key += self.listLS.currentItem().text()[i]
             i = i + 1
-        print key
-        print self.lsdic.pop(key)
+        print(key)
+        print(self.lsdic.pop(key))
         self.listLS.takeItem(self.listLS.currentRow())
 
 
@@ -310,10 +310,10 @@ class per_creator(QWidget):
 
         self.lsdic = data["spellLearn"]
         self.listLS.clear()
-        for spell, level in self.lsdic.iteritems():
+        for spell, level in self.lsdic.items():
             self.listLS.addItem(spell + " at level " + level)
 
-        print "Loaded " + data["name"]
+        print("Loaded " + data["name"])
 
     def edit(self):
         try:
@@ -321,7 +321,7 @@ class per_creator(QWidget):
                 if self.createFrame and not popup("Override any unsaved changes?", "Warning"):
                     return
                 self.loadPer(self.listP.currentItem().text())
-        except:#To initialize createFrame UI before load
+        except AttributeError:#To initialize createFrame UI before load
             if self.listP.currentItem().text() != "":
                 temp = self.listP.currentItem().text()
                 self.buttonFrame.close()
@@ -331,13 +331,13 @@ class per_creator(QWidget):
                 return
         self.createFrame.show()
         self.mainframe.center()
-        print "Changed to edit frame"
+        print("Changed to edit frame")
 
     def save(self):
         if os.path.exists(json_reader.buildPath("data/pers/"+self.nameT.text()+".json")):
             if not popup("Override existing Persona "+self.nameT.text()+"?", "Question"):
                 return
-        print "Saving"
+        print("Saving")
         spellDeck = []
         for combobox in self.iSpellOs:
             spellDeck.append(combobox.currentText())
@@ -352,11 +352,11 @@ class per_creator(QWidget):
             (int)(self.luckT.text())
         except:
             popup("There is a number entry that isn't valid.\nEntries requiring numbers are:\nLEVEL\nSTR\nMAG\nEND\nAGI\nLUCK", "Critical")
-            print "Not Saved"
+            print("Not Saved")
             return
         if not (self.nameT.text() and not self.nameT.text().isspace()):
             popup("No name entered for your Persona. Name is a required field.", "Critical")
-            print "No Name, not saved"
+            print("No Name, not saved")
             return
         toWrite = Persona(self.nameT.text(), self.arcO.currentText(), self.levelT.text(), self.textT.toPlainText(), spellDeck, self.lsdic, stats, res, [self.listEL1.currentText(), self.listEL2.currentText()])
         json_reader.writeOne(toWrite, 'pers')
@@ -364,14 +364,14 @@ class per_creator(QWidget):
         if (temp not in [self.listP.item(i).text() for i in range(self.listP.count())]):
             self.listP.addItem(temp)
         self.loadPer(temp)
-        print "Saved Persona"
+        print("Saved Persona")
 
     def remove(self):
         if self.listP.currentItem().text() == "":
             return
         if not popup("Are you certain you want to completely remove this Persona?\n(Cannot be undone)", "Warning"):
             return
-        print "Removing Persona " + self.listP.currentItem().text()
+        print("Removing Persona " + self.listP.currentItem().text())
         json_reader.deletePer(self.listP.currentItem().text())
         self.listP.takeItem([self.listP.item(i).text() for i in range(self.listP.count())].index(self.listP.currentItem().text()))
 
@@ -383,8 +383,8 @@ class per_creator(QWidget):
         self.initUI(False)
         self.createFrame.show()
         self.mainframe.center()
-        print "Created"
+        print("Created")
 
     def back(self):
-        print "Returned to main screen"
+        print("Returned to main screen")
         self.mainframe.changeState(self.op)

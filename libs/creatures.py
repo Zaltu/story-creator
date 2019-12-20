@@ -90,7 +90,7 @@ class Persona():
     def setName(self, pName):
         self.name = pName
 
-    def setEvolveName(self, pEvovleName):
+    def setEvolveName(self, pEvolveName):
         self.evolveName = pEvolveName
 
     def setLevel(self, pLevel):

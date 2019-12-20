@@ -1,5 +1,5 @@
-from PySide.QtGui import QWidget, QGridLayout, QPushButton, QLabel
-from PySide.QtCore import Qt
+from PySide2.QtWidgets import QWidget, QGridLayout, QPushButton, QLabel
+from PySide2.QtCore import Qt
 from libs.action import *
 
 
@@ -39,7 +39,7 @@ class Simulation(QWidget):
         self.close()
 
     def action(self):
-        print "Dipslaying Action at index " + str(self.currentIndex) + " " + self.fullLink.getOneID(self.fullLink.getItem(self.currentIndex))[:20]
+        print("Dipslaying Action at index " + str(self.currentIndex) + " " + self.fullLink.getOneID(self.fullLink.getItem(self.currentIndex))[:20])
         for response in self.responses:
             response.close()
             response.clicked.disconnect()
@@ -65,7 +65,7 @@ class Simulation(QWidget):
         self.label.setText(actionText)
         self.grid.addWidget(self.label, 0, 0)
 
-        print "Currently reading: " + str(self.link[self.currentIndex])
+        print("Currently reading: " + str(self.link[self.currentIndex]))
         if len(self.link[self.currentIndex]) == 2:
             self.next = QPushButton(self, text="Next")
             self.grid.addWidget(self.next, 1, 0)
@@ -73,7 +73,7 @@ class Simulation(QWidget):
             self.currentIndex = self.link[self.currentIndex][1]
         elif len(self.link[self.currentIndex]) > 2:
             for relation in self.link[self.currentIndex][1:len(self.link[self.currentIndex])]:
-                print "Linked to multiple relations: " + str(relation)
+                print("Linked to multiple relations: " + str(relation))
                 self.responses.append(QPushButton(self, text=self.fullLink.getOneID(self.fullLink.getItem(relation))))
                 self.grid.addWidget(self.responses[-1], len(self.responses), 0)
                 if len(self.link[relation]) == 2:
@@ -81,12 +81,12 @@ class Simulation(QWidget):
                 else:
                     self.responses[-1].clicked.connect((lambda nextIndex=relation: self.chosenOne(nextIndex)))
         elif len(self.link[self.currentIndex]) == 1:
-            print "End of link, user forced to quit"
+            print("End of link, user forced to quit")
         else:
-            print "ERROR READING SOCIAL LINK\nACTION INDEX: " + str(self.currentIndex)
+            print("ERROR READING SOCIAL LINK\nACTION INDEX: " + str(self.currentIndex))
 
     def chosenOne(self, index):
-        print index
+        print(index)
         self.currentIndex = index
         self.action()
 
