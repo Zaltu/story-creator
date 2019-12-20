@@ -1,62 +1,98 @@
+"""
+This module holds all the logic pertaining to what actions that can transpire within a cutscene represent.
+"""
+#pylint: disable=dangerous-default-value
 def load(action):
-    o = None
+    """
+    Attempt to load a generic action dict into whatever Action type possible.
+
+    :param dict action: action of an undefined type
+
+    :returns: an Action object of the correct type for this undefined dict.
+    :rtype: Action
+    """
+    obj = None
     try:
-        o = Camera()
-        o.setPlace(action["place"])
-        o.setCameraPosition(action["cameraPosition"])
-        o.setLookAt(action["lookAt"])
-        return o
-    except:
+        obj = Camera()
+        obj.setPlace(action["place"])
+        obj.setCameraPosition(action["cameraPosition"])
+        obj.setLookAt(action["lookAt"])
+        return obj
+    except AttributeError:
         pass
     try:
-        o = Movement()
-        o.setSubject(action["subject"])
-        o.setAnimation(action["animation"])
-        o.setDestination(action["destination"])
-        return o
-    except:
+        obj = Movement()
+        obj.setSubject(action["subject"])
+        obj.setAnimation(action["animation"])
+        obj.setDestination(action["destination"])
+        return obj
+    except AttributeError:
         pass
     try:
-        o = Speak()
-        o.setSpeaker(action["speaker"])
-        if 'emotion' in action:
-            o.emotion = action['emotion']
-        o.setText(action["text"])
+        obj = Speak()
+        obj.setSpeaker(action["speaker"])
+        obj.emotion = action.get('emotion', "")
+        obj.setText(action["text"])
         for arcana, points in action["points"].items():
-            o.putPoints(arcana, points)
+            obj.putPoints(arcana, points)
         for arcana, angle in action["angle"].items():
-            o.putAngle(arcana, angle)
-        return o
-    except:
+            obj.putAngle(arcana, angle)
+        return obj
+    except AttributeError:
         pass
     try:
-        o = Info()
-        o.setText(action["text"])
-        return o
-    except:
+        obj = Info()
+        obj.setText(action["text"])
+        return obj
+    except AttributeError:
         pass
 
 
 class Info():
+    """
+    Info Action. Represents just general info for the devs, or information for a camera or move action for
+    which the coordinates are not known yet.
 
-    def __init__(self):
-        self.text = ""
+    :param str text: text of this info. Defaults to empty string
+    """
+    def __init__(self, text=""):
+        self.text = text
 
     def setText(self, pText):
+        """
+        Set the text for this info action
+
+        :param str pText: the new text for this info action
+        """
         self.text = pText
 
     def getText(self):
+        """
+        Get the text of this info action
+
+        :returns: current text
+        :rtype: str
+        """
         return self.text
 
 
 class Speak():
+    """
+    Speak Action. Represents a character, including the MC, saying something in a conversation.
+    May also contain flags to adjust the amount of points/angle gained toward a social link.
 
-    def __init__(self):
-        self.text = ""
-        self.speaker = ""
-        self.points = {}
-        self.angle = {}
-        self.emotion = ""
+    :param str text: spoken text
+    :param str speaker: name of person speaking this text
+    :param dict points: {arcana: amount} of points to gain or lose
+    :param dict angle: {arcana: amount} of angle degree to gain or lose
+    :param str emotion: emotion for the sprite
+    """
+    def __init__(self, text="", speaker="", points={}, angle={}, emotion=""):
+        self.text = text
+        self.speaker = speaker
+        self.points = points
+        self.angle = angle
+        self.emotion = emotion
 
     def putPoints(self, arcana, points):
         self.points[arcana] = points
