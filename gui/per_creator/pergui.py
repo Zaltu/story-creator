@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 import os
 from PySide2.QtWidgets import QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox, QTextEdit
 from gui.popup import popup

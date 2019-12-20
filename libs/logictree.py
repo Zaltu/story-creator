@@ -59,7 +59,7 @@ class MathGraph:
 
     def addItem(self, action, index):
         if not isinstance(self.items[index], DynamicList):
-            self.items[i] = DynamicList()
+            self.items[index] = DynamicList()
         self.items[index][0] = action
 
     def addRelation(self, i, j):

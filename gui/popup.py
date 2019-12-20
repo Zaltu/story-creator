@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QMessageBox
 
 def popup(message, type):

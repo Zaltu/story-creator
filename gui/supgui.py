@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 from shutil import copytree, copy
 import os
 from email.mime.multipart import MIMEMultipart, MIMEBase

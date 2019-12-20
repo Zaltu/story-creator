@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton
 from PySide2.QtCore import Qt
 from gui.popup import popup
@@ -143,7 +144,7 @@ class LinkInfo(QWidget):
 
     def recs(self):
         try:
-            self.reqs.close()
+            self.reqs.close()  #pylint: disable=access-member-before-definition
         except Exception as e:
             print(e)
             print("Can't close oudated req widget")

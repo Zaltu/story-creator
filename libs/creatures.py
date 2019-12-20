@@ -1,11 +1,5 @@
 class Character():
-
-    def __init__(self):
-        self.name = ""
-        self.desc = ""
-        self.important = False
-
-    def __init__(self, nameP, descP, importantP):
+    def __init__(self, nameP="", descP="", importantP=False):
         self.name = nameP
         self.desc = descP
         self.important = importantP

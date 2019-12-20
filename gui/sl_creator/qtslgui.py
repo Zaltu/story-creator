@@ -1,3 +1,4 @@
+#pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
 from PySide2.QtCore import Qt
 from gui.sl_creator.simulate import Simulation
@@ -479,7 +480,7 @@ class SpeakFrame(QWidget):
         speakSlide.setText(self.infoBox.toPlainText())
         speakSlide.setSpeaker(self.speaker.currentText())
         speakSlide.emotion = self.emotion.currentText()
-        for i in xrange(len(self.pointvec)):
+        for i in range(len(self.pointvec)):
             if self.pointvar[i].currentText() != "":
                 try:
                     amount = (int)(self.pointvec[i].text())
@@ -487,7 +488,7 @@ class SpeakFrame(QWidget):
                 except:
                     popup("All Points must be integers.\nTo discard one line, empty the text field and set the arcana to blank.", "Critical")
                     print("Amount must be an integer")
-        for i in xrange(len(self.anglevec)):
+        for i in range(len(self.anglevec)):
             if self.anglevar[i].currentText() != "":
                 try:
                     amount = (int)(self.anglevec[i].text())

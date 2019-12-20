@@ -1,6 +1,7 @@
+#pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QHBoxLayout, QScrollArea
-from PySide2.QtGui import QPalette, QPen, QPainter, QBrush
-from PySide2.QtCore import Qt, QPoint, QRectF
+from PySide2.QtGui import QPalette, QPen, QPainter
+from PySide2.QtCore import Qt, QPoint
 from gui.popup import popup
 from libs.action import Speak
 
