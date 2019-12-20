@@ -69,7 +69,6 @@ class MathGraph:
     def delRelation(self, i, j):
         self.items[i].remove(j)
         jfound = False
-        print(self.items[i])
         for itemRelation in self.items:
             if j in itemRelation:
                 jfound = True
@@ -93,31 +92,22 @@ class MathGraph:
         if i != 0:
             ignore.append(0)#We don't want to consider anything solely accessible by root to be "part of the subtree". Root is a unique case.
         fullsubtree = self.ywaysfromi(i, processed)
-        print(fullsubtree)
         for j in fullsubtree:
             if j not in ignore:
                 for item in fullsubtree:
                     if item not in ignore and j in self.items[item]:
-                        print("[Subtree] Link to " + str(j) + " at index " + str(item))
                         county += 1
                 for item in self.items:
                     if j in item:
-                        print("[Full Tree] Link to " + str(j) + " at index " + str(self.items.index(item)))
                         countx += 1
-                print("Is it unique?")
-                print(str(county) + " relations in the subtree")
-                print(str(countx) + " relations in the full tree")
                 if county == countx:
-                    print("Yes")
                     UD.append(j)
                 else:
                     if j != i:
                         ignore.append(j)
-                        print("Removing " +str(j) + " from future checks in subtree")
                         for ignoresub in self.ywaysfromi(j):
                             if ignoresub not in ignore:
                                 ignore.append(ignoresub)
-                                print("Removing " +str(ignoresub) + " from future checks in subtree")
             county = 0
             countx = 0
 

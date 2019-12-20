@@ -56,7 +56,6 @@ class PrettySL(QWidget):
         self.show()
 
     def trackIndex(self, index):
-        print("Called")
         self.needsRefresh = True
         self.lastButtonPressed = index
         self.subtree = self.graph.subTree(index)
@@ -226,14 +225,6 @@ class TreeWidget(QWidget):
         for element in self.map:
             self.mapped[element[0]] = element[1]
 
-        print(self.map)
-        print()
-        print()
-        print(self.needsLine)
-        print()
-        print()
-        print(self.depthTracker)
-
         self.placedInLine = {}
         self.lineWidgets = {}
         self.buttons = {}
@@ -244,7 +235,9 @@ class TreeWidget(QWidget):
                 self.lineWidgets[element[1]][0].setLayout(self.lineWidgets[element[1]][1])
             tempB = QPushButton(self.lineWidgets[element[1]][0], text=self.ids[element[0]])
             tempB.setFixedSize(150, 20)
-            tempB.clicked.connect(lambda ind=element[0]: self.op.trackIndex(ind))
+            # Causes memory leak because lambda prevents button from being cleaned up.
+            # _=False because PySide2 sends a state object to the connecting function as well.
+            tempB.clicked.connect(lambda _=False, ind=element[0]: self.op.trackIndex(ind))
             self.lineWidgets[element[1]][1].addWidget(tempB)
             self.buttons[element[0]] = tempB
         for lineNumber, widget in self.lineWidgets.items():
@@ -254,8 +247,6 @@ class TreeWidget(QWidget):
     def nextRow(self, currentAction, currentDepth):
         for relation in currentAction[1:len(currentAction)]:
             if relation not in self.processed:
-                print(self.processed)
-                print(relation, currentDepth)
                 self.processed.append(relation)
                 self.map.append((relation, currentDepth))
                 try:
@@ -279,7 +270,6 @@ class TreeWidget(QWidget):
         #ito = self.mapToTree(self.needsLine[0][1])
         #qp.drawLine(ifrom.x(), ifrom.y(), ito.x(), ito.y())
         #alternate = True
-        #print(self.op.lastButtonPressed)
         if self.op.lastButtonPressed is not None:
             pen.setColor(Qt.yellow)
             qp.setPen(pen)
