@@ -1,3 +1,6 @@
+"""
+This module defines data classes for "living" subjects within PX.
+"""
 class Character():
     """
     The Character class represents a character that can appear in the game, or any entity which could have
