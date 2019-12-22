@@ -18,7 +18,7 @@ def load(action):
         obj.setCameraPosition(action["cameraPosition"])
         obj.setLookAt(action["lookAt"])
         return obj
-    except AttributeError:
+    except KeyError:
         pass
     try:
         obj = Movement()
@@ -26,7 +26,7 @@ def load(action):
         obj.setAnimation(action["animation"])
         obj.setDestination(action["destination"])
         return obj
-    except AttributeError:
+    except KeyError:
         pass
     try:
         obj = Speak()
@@ -38,13 +38,13 @@ def load(action):
         for arcana, angle in action["angle"].items():
             obj.putAngle(arcana, angle)
         return obj
-    except AttributeError:
+    except KeyError:
         pass
     try:
         obj = Info()
         obj.setText(action["text"])
         return obj
-    except AttributeError:
+    except KeyError:
         pass
 
 

@@ -78,9 +78,9 @@ class Simulation(QWidget):
                 self.responses.append(QPushButton(self, text=self.fullLink.getOneID(self.fullLink.getItem(relation))))
                 self.grid.addWidget(self.responses[-1], len(self.responses), 0)
                 if len(self.link[relation]) == 2:
-                    self.responses[-1].clicked.connect((lambda nextIndex=self.link[relation][1]: self.chosenOne(nextIndex)))
+                    self.responses[-1].clicked.connect((lambda _=False, nextIndex=self.link[relation][1]: self.chosenOne(nextIndex)))
                 else:
-                    self.responses[-1].clicked.connect((lambda nextIndex=relation: self.chosenOne(nextIndex)))
+                    self.responses[-1].clicked.connect((lambda _=False, nextIndex=relation: self.chosenOne(nextIndex)))
         elif len(self.link[self.currentIndex]) == 1:
             print("End of link, user forced to quit")
         else:
