@@ -7,7 +7,7 @@ from PySide2.QtGui import QPalette, QPixmap
 from PySide2.QtCore import Qt
 from gui.char_creator.chargui import CharUI
 from gui.per_creator.pergui import PersonaUI
-from gui.sl_creator.slcontextgui import SL_creator
+from gui.sl_creator.slcontextgui import SLUI
 from gui.supgui import SupportUI
 from libs import json_reader
 
@@ -100,7 +100,7 @@ class OP(QWidget):
         Change the view to the Social Link creator view.
         """
         print("Changed frame to SL creator")
-        self.mainframe.changeState(SL_creator(self.mainframe, self))
+        self.mainframe.changeState(SLUI(self.mainframe, self))
 
     def quit(self):
         """
