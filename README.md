@@ -15,4 +15,5 @@ then run `qtmain.py` as:
 ```python3.7 story-creator/qtmain.py```
 
 
-#### TODO: Creation Guide
+#### Creation Guide
+A simple guide on how to use this application [can be found here](DOC/README.pdf).
