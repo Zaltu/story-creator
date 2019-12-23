@@ -439,8 +439,8 @@ class TreeWidget(QWidget):
         :returns: xy mapped to Tree
         :rtype: QPoint
         """
-        p = QPoint(self.buttons[index].rect().left(), self.buttons[index].rect().top())
-        return self.buttons[index].mapTo(self, p)
+        point = QPoint(self.buttons[index].rect().left(), self.buttons[index].rect().top())
+        return self.buttons[index].mapTo(self, point)
 
 #TESTS
 #app = QApplication(sys.argv)

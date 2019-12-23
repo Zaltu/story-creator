@@ -1,16 +1,28 @@
+"""
+Module for all the cutscene editing views.
+"""
 #pylint: disable=no-name-in-module
-from PySide2.QtWidgets import QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit, QLineEdit
+from PySide2.QtWidgets import (QWidget, QGridLayout, QPushButton, QLabel, QComboBox, QListWidget, QTextEdit,
+                               QLineEdit)
 from PySide2.QtCore import Qt
 from gui.sl_creator.simulate import Simulation
 from gui.sl_creator.slview import PrettySL
 from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
 from libs.sls import SocialLink
-from libs.action import *
+from libs.action import Info, Speak, Camera, Movement
 from libs import json_reader
 
 class SLFrame(QWidget):
+    """
+    The main cutscene editing view. This widget is used to contain all other edit views.
 
+    :param MainFrame mainframe: application mainframe
+    :param QWidget op: parent widget
+    :param str arcana: cutscene's social link arcana
+    :param int level: cutscene's social link level
+    :param int angle: cutscene's social link angle
+    """
     def __init__(self, mainframe, op, arcana, level, angle):
         QWidget.__init__(self)
         self.mainframe = mainframe
@@ -21,10 +33,19 @@ class SLFrame(QWidget):
         self.linkstored = SocialLink(arcana)
         self.link = self.linkstored.startLink(level, angle)
         self.i = 0
+
+        # View initializers...
+        self.graphicview = None
+        self.listview = None
+        self.sim = None
         self.cc = None
+
         self.initUI()
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        """
         self.mainframe.setWindowTitle("Social Link Creator")
         self.grid = QGridLayout()
         self.setLayout(self.grid)
@@ -46,21 +67,41 @@ class SLFrame(QWidget):
         self.grid.addWidget(back, 2, 3)
 
         self.listview = SLBase(self.mainframe, self)
-        self.graphicview = None
 
     def back(self):
+        """
+        Return view to the parent widget.
+        """
         self.mainframe.changeState(self.op)
 
     def simulate(self):
+        """
+        Simulate this cutscene.
+        Pops open the simulation model, which is modal.
+        """
         if len(self.link.getIDs()) == 0:
             popup("Nothing to simulate!", "Information")
             return
         self.sim = Simulation(self.link, self.arcana, self.level, self.angle)
 
     def infoF(self):
-        self.mainframe.changeState(LinkInfo(self.mainframe, self, self.linkstored, str(self.level), str(self.angle)))
+        """
+        Switch to the social link general information edit view.
+        """
+        self.mainframe.changeState(LinkInfo(
+            self.mainframe,
+            self,
+            self.linkstored,
+            str(self.level),
+            str(self.angle)
+        ))
 
     def viewF(self, graph):
+        """
+        Toggle between the list and graph views of the social link.
+
+        :param bool graph: whether the graph view should be displayed
+        """
         if graph:
             if len(self.link.getIDs()) == 0:
                 popup("Nothing to show!", "Information")
@@ -88,13 +129,21 @@ class SLFrame(QWidget):
             self.view.clicked.connect(lambda: self.viewF(True))
         self.mainframe.center()
 
-
-    def writeSave(self): # self was not here before whitespace changes. Verify.
+    def writeSave(self):
+        """
+        Save the current cutscene.
+        """
         self.linkstored.setLink(self.link, self.level, self.angle)
         self.linkstored.save()
 
 class SLBase(QWidget):
+    """
+    Some kind of duplicate class for displaying the "real" edit views.
+    IDK anymore.
 
+    :param MainFrame mainframe: application mainframe
+    :param QWidget op: parent widget
+    """
     def __init__(self, mainframe, op):
         QWidget.__init__(self)
         self.mainframe = mainframe
@@ -105,10 +154,13 @@ class SLBase(QWidget):
         self.op.grid.addWidget(self, 0, 0, 1, 4)
 
     def initUI(self):
+        """
+        Initialized the GUI.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
-        self.actions = self.op.link.getIDs()#load here (load the hash list from sls.py) NOT LOADING FROM SLS BUT MATHGRAPH
+        self.actions = self.op.link.getIDs()
         if len(self.actions) > 0:
             self.empty = False
         else:
@@ -125,36 +177,59 @@ class SLBase(QWidget):
         self.actOM.activated.connect(self.changeFrameL)
         self.actOM.setMaximumWidth(150)
         self.grid.addWidget(self.actOM, 0, 0)
-    # L for local. wtf overload?     
+
     def changeFrameL(self):
-        print(self.actOM.currentText())
-        if self.actOM.currentText() is not "":
-            print("Set to load")
+        """
+        # L for local. wtf overload?
+        ^ lol ^
+        Change frame to edit a certain cutscene action.
+        """
+        if self.actOM.currentText():
             self.load = self.op.link.getItem(self.actions.index(self.actOM.currentText()))
-            print(self.load)
         self.op.i = self.actions.index(self.actOM.currentText())
-        print("Current index: " + str(self.op.i))
         self.close()
         CreationContainer(self.mainframe, self.op, self.load)
 
-    #Overloaded for slview
     def changeFrame(self, load, index):
+        """
+        Overloaded for slview apparently.
+
+        :param int load: index to load maybe? Not sure
+        :param int index: apparently not the index to load, but only saved here so who knows
+        """
         self.op.i = index
         CreationContainer(self.mainframe, self.op, load)
 
 
 class CreationContainer(QWidget):
+    """
+    Apparently just another level of parent class for social link display.
+    Man I was stupid.
+    Still am luigi2hands
 
+    :param MainFrame mainframe: application mainframe
+    :param QWidget op: parent widget
+    :param int load: index to load maybe?
+    """
     def __init__(self, mainframe, op, load):
         QWidget.__init__(self)
         self.mainframe = mainframe
         self.op = op
         self.op.cc = self
         self.load = load
+
+        # View initializers...
+        self.actions = None
+        self.window = None
+
         self.initUI()
         self.op.grid.addWidget(self, 0, 0, 2, 10)
 
     def initUI(self):
+        """
+        Initialize the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -210,19 +285,35 @@ class CreationContainer(QWidget):
         self.grid.addWidget(self.conLab, 0, 5)
 
     def removeRelation(self):
-        if not self.existing_connections.currentItem() or not popup("Are you sure you want to remove this relation? Any elements with a unique dependancy on this relation will also be deleted.\nIt is highly recommended you take a look at the graphical view of the tree in order to see the potential effects of the deletion.", "Warning"):
+        """
+        Remove a relation, which will also delete the uniquely dependant subtree.
+        """
+        if not self.existing_connections.currentItem() or \
+           not popup("Are you sure you want to remove this relation? Any elements with a unique dependancy "
+                     "on this relation will also be deleted.\nIt is highly recommended you take a look at "
+                     "the graphical view of the tree in order to see the potential effects of the deletion.",
+                     "Warning"):
             return
-        self.op.link.delRelation(self.op.i, self.actions.index(self.existing_connections.currentItem().text()))
+        self.op.link.delRelation(
+            self.op.i,
+            self.actions.index(self.existing_connections.currentItem().text())
+        )
         self.populateExistingConnections()
         self.updateElementList()
         self.op.linkstored.save()
 
     def populateExistingConnections(self):
+        """
+        Display all the existing connections of the current node.
+        """
         self.existing_connections.clear()
         for relation in self.op.link.getRelations(self.op.i):
             self.existing_connections.addItem(self.op.link.getOneID(self.op.link.getItem(relation)))
 
     def back(self):
+        """
+        Return to the higher-level cutscene container view...
+        """
         if not popup("Return to list main menu?\n(Lose any unsaved changes)", "Warning"):
             return
         self.close()
@@ -230,15 +321,25 @@ class CreationContainer(QWidget):
         self.op.viewF(False)
 
     def follow(self):
-        if not self.existing_connections.currentItem() or self.existing_connections.currentItem().text() == "":
+        """
+        Move on to the edit view of the selected relationship.
+        """
+        if not self.existing_connections.currentItem() or \
+           self.existing_connections.currentItem().text() == "":
             return
-        print([self.next.itemText(i) for i in range(self.next.count())].index(self.existing_connections.currentItem().text()))
-        self.next.setCurrentIndex([self.next.itemText(i) for i in range(self.next.count())].index(self.existing_connections.currentItem().text()))
+        self.next.setCurrentIndex(
+            [self.next.itemText(i) for i in range(self.next.count())].index(
+                self.existing_connections.currentItem().text()
+            )
+        )
         self.op.i = self.actions.index(self.next.currentText())
         self.connect()
         self.next.setCurrentIndex(self.next.count()-1)
 
     def lightConnect(self):
+        """
+        Create a relationship between the current action and another.
+        """
         if not self.checkCached():
             popup("Please save this action before linking it to a new one", "Information")
             return
@@ -255,6 +356,12 @@ class CreationContainer(QWidget):
         self.populateExistingConnections()
 
     def connect(self):
+        """
+        Create a relationship between the current action and another, and enter the edit view of the
+        relationship.
+
+        :raises Exception: if the requested new action's type can't be processed (should never happen)
+        """
         print(self.next.currentText())
         if self.next.currentText() == "New element":
             self.load = 0
@@ -274,6 +381,12 @@ class CreationContainer(QWidget):
             self.changeFrame(0)
 
     def checkCached(self):
+        """
+        Check if the current element has been saved before.
+
+        :returns: if the element has been saved
+        :rtype: bool
+        """
         print(len(self.op.link.items)-1)
         print(self.op.i)
         if self.op.link.getItem(self.op.i) == []:
@@ -281,18 +394,26 @@ class CreationContainer(QWidget):
         return True
 
     def updateElementList(self):
+        """
+        Update the relationships list, I think.
+        """
         self.next.clear()
         self.actions = self.op.link.getIDs()
         self.actions.append("New element")
         self.next.addItems(self.actions)
         self.next.setCurrentIndex(len(self.actions)-1)
 
-    def changeFrame(self, something):
+    def changeFrame(self, _):
+        """
+        Change view to edit a certain type of action.
+
+        :param objct _: unused, but required by caller
+        """
         print("Changed to " + self.actOM.currentText())
         try:
             self.window.close()
         except AttributeError:
-            pass#No window open
+            pass  # No window open
         if self.actOM.currentText() == "Speak":
             self.window = SpeakFrame(self, self.load)
         elif self.actOM.currentText() == "Camera Change":
@@ -303,14 +424,21 @@ class CreationContainer(QWidget):
             self.window = InfoFrame(self, self.load)
         try:
             self.save.clicked.disconnect()
-        except:
+        except:  #pylint: disable=bare-except
             pass
         self.save.clicked.connect(self.window.save)
         self.populateExistingConnections()
         self.updateElementList()
 
-class InfoFrame(QWidget):
 
+class InfoFrame(QWidget):
+    """
+    Frame for Info action editing.
+    Just has a textbox.
+
+    :param QWidget op: parent widget
+    :param object load: something to load or 0
+    """
     def __init__(self, op, load):
         QWidget.__init__(self)
         self.op = op
@@ -318,7 +446,10 @@ class InfoFrame(QWidget):
         self.initUI()
         self.op.grid.addWidget(self, 1, 0, 1, 5)
 
-    def initUI(self):       
+    def initUI(self):
+        """
+        Initializes the GUI.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -328,13 +459,12 @@ class InfoFrame(QWidget):
 
         print(self.load)
         if self.load != 0:
-            try:
-                self.infoBox.setText(self.load.getText())
-            except Exception as e:
-                print(e)
-
+            self.infoBox.setText(self.load.getText())
 
     def save(self):
+        """
+        Save this action into the cutscene.
+        """
         print("Saving")
         infoSlide = Info()
         print("...")
@@ -347,8 +477,14 @@ class InfoFrame(QWidget):
         self.op.updateElementList()
         popup("Saved!", "Information")
 
-class SpeakFrame(QWidget):
 
+class SpeakFrame(QWidget):
+    """
+    Speak frame. Represents the edit view of speak actions.
+
+    :param QWidget op: parent widget
+    :param object load: something to load or 0
+    """
     def __init__(self, op, load):
         QWidget.__init__(self)
         self.op = op
@@ -363,6 +499,10 @@ class SpeakFrame(QWidget):
         self.op.grid.addWidget(self, 1, 0, 1, 5)
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -417,7 +557,7 @@ class SpeakFrame(QWidget):
         self.s_emotions = json_reader.data_list('sprite_emotions')
         self.emotion = QComboBox(self)
         self.emotion.addItems(self.s_emotions)
-        self.grid.addWidget(self.emotion, 1, 7)     
+        self.grid.addWidget(self.emotion, 1, 7)
 
         self.addp = QPushButton(self, text="Add points")
         self.addp.clicked.connect(self.extendP)
@@ -428,32 +568,30 @@ class SpeakFrame(QWidget):
         self.grid.addWidget(self.adda, 30, 6, 1, 2)
 
         if self.load != 0:
-            try:
-                self.infoBox.setText(self.load.getText())
-                self.speaker.setCurrentIndex(self.characs.index(self.load.getSpeaker()))
-                self.emotion.setCurrentIndex(self.s_emotions.index(self.load.emotion))
-                first = True
-                for arcana, points in self.load.getPoints().items():
-                    if first:
-                        first = False
-                    else:
-                        self.extendP()
-                    self.pointvec[-1].setText(str(points))
-                    self.pointvar[-1].setCurrentIndex(self.arcanas.index(arcana))
-                first = True
-                for arcana, angle in self.load.getAngle().items():
-                    if first:
-                        first = False
-                    else:
-                        self.extendA()
-                    self.anglevec[-1].setText(str(angle))
-                    self.anglevar[-1].setCurrentIndex(self.arcanas.index(arcana))
-            except Exception as e:
-                print(e)
-
-
+            self.infoBox.setText(self.load.getText())
+            self.speaker.setCurrentIndex(self.characs.index(self.load.getSpeaker()))
+            self.emotion.setCurrentIndex(self.s_emotions.index(self.load.emotion))
+            first = True
+            for arcana, points in self.load.getPoints().items():
+                if first:
+                    first = False
+                else:
+                    self.extendP()
+                self.pointvec[-1].setText(str(points))
+                self.pointvar[-1].setCurrentIndex(self.arcanas.index(arcana))
+            first = True
+            for arcana, angle in self.load.getAngle().items():
+                if first:
+                    first = False
+                else:
+                    self.extendA()
+                self.anglevec[-1].setText(str(angle))
+                self.anglevar[-1].setCurrentIndex(self.arcanas.index(arcana))
 
     def extendP(self):
+        """
+        Add an extra line to the points/arcana list.
+        """
         self.pointvec.extend([QLineEdit(self)])
         self.pointvec[-1].setFixedSize(20, 20)
         self.pointvar.extend([QComboBox(self)])
@@ -464,6 +602,9 @@ class SpeakFrame(QWidget):
         self.addPAtIndex += 1
 
     def extendA(self):
+        """
+        Add an extra line to the angle/arcana list.
+        """
         self.anglevec.extend([QLineEdit(self)])
         self.anglevec[-1].setFixedSize(20, 20)
         self.anglevar.extend([QComboBox(self)])
@@ -474,6 +615,9 @@ class SpeakFrame(QWidget):
         self.addAAtIndex += 1
 
     def save(self):
+        """
+        Save this speak action to the cutscene.
+        """
         print("Saving")
         print("...")
         speakSlide = Speak()
@@ -485,16 +629,18 @@ class SpeakFrame(QWidget):
                 try:
                     amount = (int)(self.pointvec[i].text())
                     speakSlide.putPoints(self.pointvar[i].currentText(), amount)
-                except:
-                    popup("All Points must be integers.\nTo discard one line, empty the text field and set the arcana to blank.", "Critical")
+                except ValueError:
+                    popup("All Points must be integers.\nTo discard one line, empty the text field and set "
+                          "the arcana to blank.", "Critical")
                     print("Amount must be an integer")
         for i in range(len(self.anglevec)):
             if self.anglevar[i].currentText() != "":
                 try:
                     amount = (int)(self.anglevec[i].text())
                     speakSlide.putAngle(self.anglevar[i].currentText(), amount)
-                except:
-                    popup("All Points and Angles must be integers.\nTo discard one line, set empty the text field and set the arcana to blank.", "Critical")
+                except ValueError:
+                    popup("All Points and Angles must be integers.\nTo discard one line, set empty the text "
+                          "field and set the arcana to blank.", "Critical")
                     print("Amount must be an integer")
         self.op.op.link.addItem(speakSlide, self.op.op.i)
         print("Saved")
@@ -505,7 +651,12 @@ class SpeakFrame(QWidget):
 
 
 class CameraFrame(QWidget):
+    """
+    Camera frame. Represents the edit view of camera actions.
 
+    :param QWidget op: parent widget
+    :param object load: something to load or 0
+    """
     def __init__(self, op, load):
         QWidget.__init__(self)
         self.op = op
@@ -514,6 +665,10 @@ class CameraFrame(QWidget):
         self.op.grid.addWidget(self, 1, 0, 1, 5)
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -570,21 +725,20 @@ class CameraFrame(QWidget):
         self.grid.addWidget(self.locationO, 1, 5)
 
         if self.load != 0:
-            try:
-                self.locationO.setCurrentIndex(self.locations.index(self.load.getPlace()))
-                cp = self.load.getCameraPosition()
-                la = self.load.getLookAt()
-                self.cx.setText(str(cp[0]))
-                self.cy.setText(str(cp[1]))
-                self.cz.setText(str(cp[2]))
-                self.lx.setText(str(la[0]))
-                self.ly.setText(str(la[1]))
-                self.lz.setText(str(la[2]))
-            except Exception as e:
-                print(e)
-
+            self.locationO.setCurrentIndex(self.locations.index(self.load.getPlace()))
+            cp = self.load.getCameraPosition()
+            la = self.load.getLookAt()
+            self.cx.setText(str(cp[0]))
+            self.cy.setText(str(cp[1]))
+            self.cz.setText(str(cp[2]))
+            self.lx.setText(str(la[0]))
+            self.ly.setText(str(la[1]))
+            self.lz.setText(str(la[2]))
 
     def save(self):
+        """
+        Save this camera action to the cutscene.
+        """
         print("Saving")
         cameraSlide = Camera()
         cameraSlide.setPlace(self.locationO.currentText())
@@ -596,9 +750,9 @@ class CameraFrame(QWidget):
             (int)(self.cx.text())
             (int)(self.cy.text())
             (int)(self.cz.text())
-        except:
-            popup("Camera position (x, y, z) and look direction (x, y, z) must be entered as whole numbers", "Critical")
-            print("Must be an integer")
+        except ValueError:
+            popup("Camera position (x, y, z) and look direction (x, y, z) must be entered as whole numbers",
+                  "Critical")
             return
 
         cameraSlide.setLookAt(((int)(self.lx.text()), (int)(self.ly.text()), (int)(self.lz.text())))
@@ -612,7 +766,12 @@ class CameraFrame(QWidget):
 
 
 class MoveFrame(QWidget):
+    """
+    Move frame. Represents the edit view of movement actions.
 
+    :param QWidget op: parent widget
+    :param object load: something to load or 0
+    """
     def __init__(self, op, load):
         QWidget.__init__(self)
         self.op = op
@@ -621,6 +780,10 @@ class MoveFrame(QWidget):
         self.op.grid.addWidget(self, 1, 0, 1, 5)
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -658,16 +821,15 @@ class MoveFrame(QWidget):
         self.grid.addWidget(self.ani, 2, 4)
 
         if self.load != 0:
-            try:
-                self.ani.setCurrentIndex(self.animations.index(self.load.getAnimation()))
-                self.speaker.setCurrentIndex(self.characs.index(self.load.getSubject()))
-                self.lx.setText(self.load.getDestination()[0])
-                self.ly.setText(self.load.getDestination()[1])
-            except Exception as e:
-                print(e)
-
+            self.ani.setCurrentIndex(self.animations.index(self.load.getAnimation()))
+            self.speaker.setCurrentIndex(self.characs.index(self.load.getSubject()))
+            self.lx.setText(self.load.getDestination()[0])
+            self.ly.setText(self.load.getDestination()[1])
 
     def save(self):
+        """
+        Save this movement action to the cutscene.
+        """
         print("Saving")
         moveSlide = Movement()
         moveSlide.setSubject(self.speaker.currentText())
@@ -676,9 +838,8 @@ class MoveFrame(QWidget):
         try:
             (int)(self.lx.text())
             (int)(self.ly.text())
-        except:
+        except ValueError:
             popup("Destination coordinates (x, y) must be entered as integers", "Critical")
-            print("Numbers must be integers")
             return
 
         moveSlide.setDestination(((int)(self.lx.text()), (int)(self.ly.text())))
