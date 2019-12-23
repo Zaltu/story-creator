@@ -49,8 +49,7 @@ def readLink(arcana):
             array = json.load(json_data)
         json_data.close()
         return array
-    except IOError as e:
-        print(e)  # Should be filenotfound
+    except FileNotFoundError:
         return {}
 
 
