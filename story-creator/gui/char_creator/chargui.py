@@ -1,11 +1,20 @@
+"""
+Module containing the Character creator view.
+"""
 #pylint: disable=no-name-in-module
-from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QCheckBox, QComboBox
+from PySide2.QtWidgets import (QWidget, QGridLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QCheckBox,
+                               QComboBox)
 from libs.creatures import Character
 from libs import json_reader
 from gui.popup import popup
 
-class char_creator(QWidget):
+class CharUI(QWidget):
+    """
+    Main widget for the Character creator view.
 
+    :param MainFrame mainframe: the application mainframe
+    :param QWidget op: parent widget
+    """
     def __init__(self, mainframe, op):
         print("Starting...")
         QWidget.__init__(self)
@@ -17,6 +26,10 @@ class char_creator(QWidget):
         self.initUI()
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does a lot of stuff.
+        """
         self.mainframe.setWindowTitle("Character Creator")
 
         grid = QGridLayout()
@@ -60,6 +73,11 @@ class char_creator(QWidget):
         grid.addWidget(self.allChars, 4, 4)
 
     def loadChar(self, name):
+        """
+        Load one character from file based on the name.
+
+        :param str name: name of character to load
+        """
         print("Loading...")
         if self.importantB.isChecked():
             self.importantB.toggle()
@@ -76,7 +94,11 @@ class char_creator(QWidget):
         print("Loaded character " + self.allChars.currentText())
 
     def remove(self):
-        if not popup("Are you certain you want to completely remove this character?\n(Cannot be undone)", "Warning"):
+        """
+        Remove a character from the list, and remove them from disk.
+        """
+        if not popup("Are you certain you want to completely remove this character?\n(Cannot be undone)",
+                     "Warning"):
             return
         print("Removing character " + self.allChars.currentText())
         json_reader.deleteChar(self.allChars.currentText())
@@ -85,8 +107,12 @@ class char_creator(QWidget):
         self.loadChar("New")
 
     def save(self):
+        """
+        Save a character to disk from the information entered in the GUI.
+        """
         if self.nameT.text() in ["New", ""]:
-            popup("Sorry, your character cannot be called \""+self.nameT.text()+"\". That is a reserved keyword (and it's also a dumb name)", "Critical")
+            popup("Sorry, your character cannot be called \""+self.nameT.text()+"\". That is a reserved "
+                  "keyword (and it's also a dumb name)", "Critical")
             return
         print("Saving")
         try:
@@ -103,4 +129,7 @@ class char_creator(QWidget):
         print("Saved")
 
     def back(self):
+        """
+        Return the view to the calling widget.
+        """
         self.mainframe.changeState(self.op)

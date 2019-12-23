@@ -5,7 +5,7 @@ Module containing the main opening screen of the app.
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QSizePolicy
 from PySide2.QtGui import QPalette, QPixmap
 from PySide2.QtCore import Qt
-from gui.char_creator.chargui import char_creator
+from gui.char_creator.chargui import CharUI
 from gui.per_creator.pergui import per_creator
 from gui.sl_creator.slcontextgui import SL_creator
 from gui.supgui import SupportUI
@@ -93,7 +93,7 @@ class OP(QWidget):
         Change the view to the Character creator view.
         """
         print("Changed frame to Character creator")
-        self.mainframe.changeState(char_creator(self.mainframe, self))
+        self.mainframe.changeState(CharUI(self.mainframe, self))
 
     def actionS(self):
         """
