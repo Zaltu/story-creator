@@ -1,3 +1,7 @@
+"""
+Module for the pretty(ier) graph view of a social link cutscene and it's interdependencies.
+TODO replace w/ NodeGraphQT
+"""
 #pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QHBoxLayout, QScrollArea
 from PySide2.QtGui import QPalette, QPen, QPainter
@@ -6,7 +10,12 @@ from gui.popup import popup
 from libs.action import Speak
 
 class PrettySL(QWidget):
+    """
+    This is the base widget to contain the graph view of the cutscene.
 
+    :param MainFrame mainframe: application mainframe
+    :param QWidget op: parent widget
+    """
     def __init__(self, mainframe, op):
         QWidget.__init__(self)
         self.mainframe = mainframe
@@ -15,13 +24,25 @@ class PrettySL(QWidget):
         self.table = self.op.link.items
         self.lastButtonPressed = None
         self.needsRefresh = False
+        self.tree = None
         self.subtree = []
         self.delete = None
+
+        # View initializations...
+        self.lab = None
+        self.idLabel = None
+        self.edit = None
+        self.lkst = None
+        self.rels = None
+
         self.initData()
         self.initUI()
 
 
     def initData(self):
+        """
+        Initialize the data to be used.
+        """
         self.lab = None
         self.actionIDs = self.graph.getIDs()
         self.actionObjs = []
@@ -29,6 +50,10 @@ class PrettySL(QWidget):
             self.actionObjs.append(act[0])
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -57,6 +82,11 @@ class PrettySL(QWidget):
         self.show()
 
     def trackIndex(self, index):
+        """
+        Update the Tree and info views with a new index.
+
+        :param int index: the new index
+        """
         self.needsRefresh = True
         self.lastButtonPressed = index
         self.subtree = self.graph.subTree(index)
@@ -64,7 +94,11 @@ class PrettySL(QWidget):
         self.initInfoUI(index)
 
     def deleteSubtree(self):
-        if not popup("Are you certain you want to delete this item and it's subtree?\n(Everything in red and yellow will be deleted)", "Warning"):
+        """
+        Delete the subtree of the current selected index.
+        """
+        if not popup("Are you certain you want to delete this item and it's subtree?\n(Everything in red and"
+                     " yellow will be deleted)", "Warning"):
             return
         self.graph.delItem(self.lastButtonPressed)
         self.lab.close()
@@ -83,6 +117,12 @@ class PrettySL(QWidget):
         self.grid.addWidget(self.tree, 0, 0, 10, 3)
 
     def initInfoUI(self, index):
+        """
+        Initialize the node info GUI.
+        Does a lot of stuff.
+
+        :param int index: index of node to display info for
+        """
         if not self.lab:
             self.lab = QLabel(self, text="Selected element summary:")
             self.grid.addWidget(self.lab, 2, 3, 1, 2)
@@ -124,6 +164,11 @@ class PrettySL(QWidget):
             self.grid.addWidget(self.delete, 1, 3, 1, 2)
 
     def enter(self, index):
+        """
+        Leave the graph view and edit a node.
+
+        :param int index: index of node to edit
+        """
         load = self.graph.getItem(index)
         self.close()
         self.op.view.setText("Graphic View")
@@ -134,7 +179,11 @@ class PrettySL(QWidget):
 
 
 class Legend(QWidget):
+    """
+    Widget to display a simplistic legend of color and line significance in the graph.
 
+    :param QWidget op: parent widget
+    """
     def __init__(self, op):
         QWidget.__init__(self)
         self.op = op
@@ -142,6 +191,9 @@ class Legend(QWidget):
         self.initUI()
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -163,6 +215,7 @@ class Legend(QWidget):
         self.leaf = QLabel(self, text="End(s) of cutscene:")
         self.grid.addWidget(self.leaf, 5, 0)
 
+        # Buffer zone, very dumb
         empty = QLabel(self)
         empty.setFixedSize(150, 20)
         self.grid.addWidget(empty, 1, 1)
@@ -171,13 +224,23 @@ class Legend(QWidget):
         self.grid.addWidget(empty, 4, 1)
         self.grid.addWidget(empty, 5, 1)
 
-    def paintEvent(self, event):
+    def paintEvent(self, _):
+        """
+        Override of paintEvent so we can draw replicas of the boxes/lines.
+
+        :param object _: unused, but required by caller
+        """
         qp = QPainter()
         qp.begin(self)
         self.drawLines(qp)
         qp.end()
 
     def drawLines(self, qp):
+        """
+        Draw the lines in the same way they would appear in the graph.
+
+        :param QPainter qp: painter to use
+        """
         pen = QPen(Qt.black, 2, Qt.SolidLine)
         qp.setPen(pen)
 
@@ -199,7 +262,17 @@ class Legend(QWidget):
         qp.drawRect(self.leaf.x()+155, self.leaf.y(), 95, 20)
 
 class TreeWidget(QWidget):
+    """
+    The actual graph view of the cutscene.
+    Nodes are represented by QPushButtons, and lines are drawn between them to symbolize relationships.
 
+    This is all very dumb.
+
+    :param QWidget op: parent widget
+    :param list actions: list of nodes to display
+    :param list ids: list of ids of the action in the actions list, in the same order
+    :param list table: table of both the actions and the ids
+    """
     def __init__(self, op, actions, ids, table):
         QWidget.__init__(self)
         self.actions = actions
@@ -211,6 +284,10 @@ class TreeWidget(QWidget):
 
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -246,6 +323,14 @@ class TreeWidget(QWidget):
 
 
     def nextRow(self, currentAction, currentDepth):
+        """
+        Parse the next row's worth of buttons recursively.
+        Basically assumes that all rows should be sequential relative to the first caller's row.
+        OK in most situations, but can cause problems.
+
+        :param list currentAction: current entry in self.tables
+        :param int currentDepth: the current row number
+        """
         for relation in currentAction[1:len(currentAction)]:
             if relation not in self.processed:
                 self.processed.append(relation)
@@ -257,13 +342,24 @@ class TreeWidget(QWidget):
                 self.nextRow(self.table[relation], currentDepth + 1)
             self.needsLine.append((self.actions.index(currentAction[0]), relation))
 
-    def paintEvent(self, event):
+    def paintEvent(self, _):
+        """
+        Override paintEvent so we can paint our lines.
+
+        :param object _: unused, but required by caller
+        """
         qp = QPainter()
         qp.begin(self)
         self.drawLines(qp)
         qp.end()
 
     def drawLines(self, qp):
+        """
+        Draw lines representing each relation in the graph, and boxes around the subtree of the selected
+        item, as well as starting point and ending point nodes.
+
+        :param QPainter qp: painter to use
+        """
         pen = QPen(Qt.black, 2, Qt.SolidLine)
         qp.setPen(pen)
         # Can be used to test drawing lines between specific actions. Keep for now.
@@ -274,7 +370,12 @@ class TreeWidget(QWidget):
         if self.op.lastButtonPressed is not None:
             pen.setColor(Qt.yellow)
             qp.setPen(pen)
-            qp.drawRect(self.mapToTree(self.op.lastButtonPressed).x(), self.mapToTree(self.op.lastButtonPressed).y(), self.buttons[self.op.lastButtonPressed].rect().width(), self.buttons[self.op.lastButtonPressed].rect().height())
+            qp.drawRect(
+                self.mapToTree(self.op.lastButtonPressed).x(),
+                self.mapToTree(self.op.lastButtonPressed).y(),
+                self.buttons[self.op.lastButtonPressed].rect().width(),
+                self.buttons[self.op.lastButtonPressed].rect().height()
+            )
             pen.setColor(Qt.black)
             qp.setPen(pen)
         for line in self.needsLine:
@@ -302,38 +403,47 @@ class TreeWidget(QWidget):
             if line[0] in self.op.subtree or line[1] in self.op.subtree:
                 pen.setColor(Qt.red)
                 qp.setPen(pen)
-                if line[0] in self.op.subtree and line[0] != self.op.lastButtonPressed:# and len(self.table[line[0]])>1:
+                if line[0] in self.op.subtree and line[0] != self.op.lastButtonPressed:
                     qp.drawRect(ifrom.x(), ifrom.y(), width0, height0)
-                if line[1] in self.op.subtree and line[1] != self.op.lastButtonPressed:# and len(self.table[line[1]])>1:
+                if line[1] in self.op.subtree and line[1] != self.op.lastButtonPressed:
                     qp.drawRect(ito.x(), ito.y(), width1, height1)
             if self.op.needsRefresh:
                 self.update()
                 self.op.needsRefresh = False
             if self.mapped[line[0]] <= self.mapped[line[1]]:
-                qp.drawLine(ifrom.x()+(width0/2), ifrom.y()+(height0/2), ito.x()+(width1/2), ito.y()+(height1/2))
+                qp.drawLine(
+                    ifrom.x()+(width0/2),
+                    ifrom.y()+(height0/2),
+                    ito.x()+(width1/2),
+                    ito.y()+(height1/2)
+                )
             else:
                 pen.setStyle(Qt.DashLine)
                 qp.setPen(pen)
-                qp.drawLine(ifrom.x()+(width0/2), ifrom.y()+(height0/2), ito.x()+(width1/2), ito.y()+(height1/2))
-                #if alternate:
-                #   qp.drawArc(QRectF(ito.x(), ito.y()+1, width0, ifrom.y()-ito.y()), 90*16, 180*16)
-                #   alternate=False
-                #else:
-                #   qp.drawArc(QRectF(ito.x(), ito.y()+1, width0, ifrom.y()-ito.y()), 270*16, 180*16)
-                #   alternate=True
+                qp.drawLine(
+                    ifrom.x()+(width0/2),
+                    ifrom.y()+(height0/2),
+                    ito.x()+(width1/2),
+                    ito.y()+(height1/2)
+                )
                 pen.setStyle(Qt.SolidLine)
             pen.setColor(Qt.black)
             qp.setPen(pen)
 
-
-
     def mapToTree(self, index):
+        """
+        Map the pixel location of a certain button to the display rect of the graph view.
+
+        :param int index: index of the button to map
+
+        :returns: xy mapped to Tree
+        :rtype: QPoint
+        """
         p = QPoint(self.buttons[index].rect().left(), self.buttons[index].rect().top())
         return self.buttons[index].mapTo(self, p)
 
-"""TESTS
-app = QApplication(sys.argv)
-psl = PrettySL(None, None, SocialLink("Void").startLink(1, 0))
-psl.show()
-sys.exit(app.exec_())
-"""
+#TESTS
+#app = QApplication(sys.argv)
+#psl = PrettySL(None, None, SocialLink("Void").startLink(1, 0))
+#psl.show()
+#sys.exit(app.exec_())
