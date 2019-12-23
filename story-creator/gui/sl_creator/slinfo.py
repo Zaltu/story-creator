@@ -1,3 +1,6 @@
+"""
+Module to handle the general information related to a Social Link as a whole.
+"""
 #pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton
 from PySide2.QtCore import Qt
@@ -5,7 +8,15 @@ from gui.popup import popup
 from libs import json_reader
 
 class LinkInfo(QWidget):
+    """
+    Social Link general information view.
 
+    :param MainFrame mainframe: the application's mainframe
+    :param QWidget op: parent widget
+    :param SocialLink link: the social link
+    :param int linklevel: the level at which to add level-specific information
+    :param int linkangle: the angle at which to add angle-specific information
+    """
     def __init__(self, mainframe, op, link, linklevel=None, linkangle=None):
         QWidget.__init__(self)
         self.mainframe = mainframe
@@ -13,25 +24,32 @@ class LinkInfo(QWidget):
         self.link = link
         self.linklevel = linklevel
         self.linkangle = linkangle
+
+        self.reqs = None
+
         self.initUI()
 
     def initUI(self):
+        """
+        Initializes the GUI.
+        Does a lot of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
         self.levang = {}
         elev = []
 
-        for key, cutscene in self.link.cutscenes.items():
+        for key, _ in self.link.cutscenes.items():
             if key[:key.index("_")] in self.levang:
                 self.levang[key[:key.index("_")]].append(key[key.index("_")+1:])
             else:
                 self.levang[key[:key.index("_")]] = [key[key.index("_")+1:]]
             if key[:key.index("_")] not in elev:
                 elev.append(key[:key.index("_")])
-        for level, angle in self.levang.items():
-            angle.sort(key=lambda angle: (int)(angle))
-        elev.sort(key=lambda level: (int)(level))
+        for _, angle in self.levang.items():
+            angle.sort(key=lambda angle: (int)(angle))  #pylint: disable=unnecessary-lambda
+        elev.sort(key=lambda level: (int)(level))  #pylint: disable=unnecessary-lambda
         infoL = QLabel(self, text="Social Link Information")
         self.grid.addWidget(infoL, 0, 0, 1, 12)
 
@@ -64,14 +82,18 @@ class LinkInfo(QWidget):
             self.grid.addWidget(arcanainfo, 4, 0, 1, 6)
             self.grid.addWidget(self.aitext, 5, 0, 1, 6)
 
-            thisinfo = QLabel(self, text=self.link.arcana + " info for level: " + self.linklevel + ", angle: " + self.linkangle)
+            thisinfo = QLabel(
+                self,
+                text=self.link.arcana + " info for level: " + self.linklevel + ", angle: " + self.linkangle
+            )
             self.grid.addWidget(thisinfo, 4, 6, 1, 6)
 
             self.titext = QTextEdit(self)
             self.titext.setFixedSize(300, 100)
             try:
                 self.titext.setText(self.link.cutinfo[self.level.currentText()+"_"+str(self.linkangle)])
-            except:
+            except:  #pylint: disable=bare-except
+                # TODO why? Backwards compatibility?
                 pass
             self.grid.addWidget(self.titext, 5, 6, 1, 6)
 
@@ -109,6 +131,9 @@ class LinkInfo(QWidget):
         self.grid.setAlignment(self.pseudoname, Qt.AlignHCenter)
 
     def saveinfo(self):
+        """
+        Set the info in the social link object and save it.
+        """
         try:
             for angle, data in self.reqs.textboxes.items():
                 (int)(data.text())
@@ -117,13 +142,13 @@ class LinkInfo(QWidget):
                         self.link.requiredPoints[self.level.currentText()] = {}
                     if angle not in self.link.requiredPoints[self.level.currentText()]:
                         self.link.requiredPoints[self.level.currentText()][angle] = {}
-                    self.link.requiredPoints[self.level.currentText()][angle]['points'] = (int)(data.text())
+                    self.link.requiredPoints[self.level.currentText()][angle]['points'] = int(data.text())
             for angle, data in self.reqs.courages.items():
-                self.link.requiredPoints[self.level.currentText()][angle]['courage'] = (int)(data.currentText())
+                self.link.requiredPoints[self.level.currentText()][angle]['courage'] = int(data.currentText())
             for angle, data in self.reqs.charms.items():
-                self.link.requiredPoints[self.level.currentText()][angle]['charm'] = (int)(data.currentText())
+                self.link.requiredPoints[self.level.currentText()][angle]['charm'] = int(data.currentText())
             for angle, data in self.reqs.acads.items():
-                self.link.requiredPoints[self.level.currentText()][angle]['acad'] = (int)(data.currentText())
+                self.link.requiredPoints[self.level.currentText()][angle]['acad'] = int(data.currentText())
             for angle, data in self.reqs.ultis.items():
                 self.link.finalpersona[angle] = data.currentText()
             self.link.pseudoname = self.pseudoname.text()
@@ -132,20 +157,26 @@ class LinkInfo(QWidget):
                 if str(self.linklevel)+"_"+str(self.linkangle) not in self.link.cutinfo:
                     self.link.cutinfo[str(self.linklevel)+"_"+str(self.linkangle)] = ""
                 self.link.cutinfo[str(self.linklevel)+"_"+str(self.linkangle)] = self.titext.toPlainText()
-        except:
+        except ValueError:
             popup("Points must be integers.\nNot saved.", "Critical")
             return
         self.link.save()
         popup("Saved", "Information")
 
     def endedit(self):
+        """
+        We're done. Return to the calling widget.
+        """
         self.mainframe.changeState(self.op)
 
 
     def recs(self):
+        """
+        Handle addition and removal of requirements window.
+        """
         try:
-            self.reqs.close()  #pylint: disable=access-member-before-definition
-        except Exception as e:
+            self.reqs.close()
+        except Exception as e:  #pylint: disable=broad-except
             print(e)
             print("Can't close oudated req widget")
         if self.level.currentText() == "":
@@ -158,6 +189,11 @@ class LinkInfo(QWidget):
 
 
 class Requirements(QWidget):
+    """
+    Helper view to set up the requirements needed for the social link at this level/angle.
+
+    :param QWidget op: parent widget
+    """
     def __init__(self, op):
         QWidget.__init__(self)
         self.op = op
@@ -171,6 +207,10 @@ class Requirements(QWidget):
         self.initUI()
 
     def initUI(self):
+        """
+        Initialize the GUI.
+        Does lots of stuff.
+        """
         self.grid = QGridLayout()
         self.setLayout(self.grid)
 
@@ -178,14 +218,20 @@ class Requirements(QWidget):
 
         if self.op.level.currentText() == '10':
             for angle in self.op.levang[self.op.level.currentText()]:
-                self.grid.addWidget(QLabel(self, text="Finishing at angle " + angle + ":\tWe bestow upon thee the ability to create"), rowi, 0)
+                self.grid.addWidget(QLabel(
+                    self,
+                    text="Finishing at angle " + angle + ":\tWe bestow upon thee the ability to create"
+                ), rowi, 0)
                 ulti = QComboBox(self)
                 ulti.addItems(self.plist)
                 if angle in self.op.link.finalpersona:
                     ulti.setCurrentIndex(self.plist.index(self.op.link.finalpersona[angle]))
                 self.ultis[angle] = ulti
                 self.grid.addWidget(self.ultis[angle], rowi, 1)
-                self.grid.addWidget(QLabel(self, text=", the ultimate form of the " + self.op.link.arcana + " arcana."), rowi, 2)
+                self.grid.addWidget(QLabel(
+                    self,
+                    text=", the ultimate form of the " + self.op.link.arcana + " arcana."
+                ), rowi, 2)
                 rowi += 1
             return
 
@@ -218,18 +264,28 @@ class Requirements(QWidget):
             self.acads[angle].addItems(["1", "2", "3", "4", "5"])
             self.acads[angle].setCurrentIndex(0)
             self.grid.addWidget(self.acads[angle], rowi, 9)
-            if self.op.level.currentText() in self.op.link.requiredPoints and angle in self.op.link.requiredPoints[self.op.level.currentText()]:
-                self.textboxes[angle].setText(str(self.op.link.requiredPoints[self.op.level.currentText()][angle]['points']))
-                self.acads[angle].setCurrentIndex(self.op.link.requiredPoints[self.op.level.currentText()][angle]['acad']-1)
-                self.charms[angle].setCurrentIndex(self.op.link.requiredPoints[self.op.level.currentText()][angle]['charm']-1)
-                self.courages[angle].setCurrentIndex(self.op.link.requiredPoints[self.op.level.currentText()][angle]['courage']-1)
+            if self.op.level.currentText() in self.op.link.requiredPoints and \
+               angle in self.op.link.requiredPoints[self.op.level.currentText()]:
+                self.textboxes[angle].setText(
+                    str(self.op.link.requiredPoints[self.op.level.currentText()][angle]['points'])
+                )
+                self.acads[angle].setCurrentIndex(
+                    self.op.link.requiredPoints[self.op.level.currentText()][angle]['acad']-1
+                )
+                self.charms[angle].setCurrentIndex(
+                    self.op.link.requiredPoints[self.op.level.currentText()][angle]['charm']-1
+                )
+                self.courages[angle].setCurrentIndex(
+                    self.op.link.requiredPoints[self.op.level.currentText()][angle]['courage']-1
+                )
             rowi += 1
 
-"""app = QApplication(sys.argv)
-sl = SocialLink("Void")
-sl.pseudoname = "Chaos"
-sl.finalpersona[5] = "Jack Frost"
-sl.finalpersona[15] = "Seraph"
-li = LinkInfo(sl, '1', '42')
-li.show()
-sys.exit(app.exec_())"""
+
+#app = QApplication(sys.argv)
+#sl = SocialLink("Void")
+#sl.pseudoname = "Chaos"
+#sl.finalpersona[5] = "Jack Frost"
+#sl.finalpersona[15] = "Seraph"
+#li = LinkInfo(sl, '1', '42')
+#li.show()
+#sys.exit(app.exec_())
