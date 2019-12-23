@@ -6,7 +6,7 @@ from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QSizePo
 from PySide2.QtGui import QPalette, QPixmap
 from PySide2.QtCore import Qt
 from gui.char_creator.chargui import CharUI
-from gui.per_creator.pergui import per_creator
+from gui.per_creator.pergui import PersonaUI
 from gui.sl_creator.slcontextgui import SL_creator
 from gui.supgui import SupportUI
 from libs import json_reader
@@ -86,7 +86,7 @@ class OP(QWidget):
         Change the view to the Persona creator view.
         """
         print("Changed frame to Persona creator")
-        self.mainframe.changeState(per_creator(self.mainframe, self))
+        self.mainframe.changeState(PersonaUI(self.mainframe, self))
 
     def actionC(self):
         """

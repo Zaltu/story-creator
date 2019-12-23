@@ -1,13 +1,22 @@
+"""
+Module containing the Persona creator view.
+"""
 #pylint: disable=no-name-in-module
 import os
-from PySide2.QtWidgets import QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox, QTextEdit
+from PySide2.QtWidgets import (QWidget, QGridLayout, QListWidget, QPushButton, QLabel, QLineEdit, QComboBox,
+                               QTextEdit)
 from gui.popup import popup
 from libs.creatures import Persona
 from libs import json_reader
 
 
-class per_creator(QWidget):
+class PersonaUI(QWidget):
+    """
+    Widget for Persona creation view.
 
+    :param MainFrame mainframe: application mainframe
+    :param QWidget op: parent widget
+    """
     def __init__(self, mainframe, op):
         QWidget.__init__(self)
         self.mainframe = mainframe
@@ -31,10 +40,35 @@ class per_creator(QWidget):
         self.luckT = None
 
         self.createFrame = None
+        self.buttonFrame = None
+        self.bfgrid = None
+        # Actual create frame variables.
+        self.cfgrid = None
+        self.lsdic = None
+        self.slashO = None
+        self.strikeO = None
+        self.pierceO = None
+        self.fireO = None
+        self.iceO = None
+        self.windO = None
+        self.elecO = None
+        self.darkO = None
+        self.lightO = None
+        self.arcO = None
+        self.iSpellOs = None
+        self.lsSpellO = None
+        self.lslevel = None
+
 
         self.initUI(True)
 
     def initUI(self, infoDump):
+        """
+        Initializes the basic UI showing the list of Personas.
+        Does a lot of stuff.
+
+        :param dict infoDump: not sure lol
+        """
         self.mainframe.setWindowTitle("Persona Creator")
 
         if not infoDump:
@@ -48,6 +82,11 @@ class per_creator(QWidget):
         self.listP.addItems(temp)
 
     def initButtonFrame(self, infoDump):
+        """
+        Initializes the buttonframes that are present in all Persona creator views.
+
+        :param dict infoDump: not sure lol
+        """
         self.buttonFrame = QWidget(self)
         self.bfgrid = QGridLayout()
         self.buttonFrame.setLayout(self.bfgrid)
@@ -78,6 +117,10 @@ class per_creator(QWidget):
 
 
     def createFrameDraw(self):
+        """
+        Initializes the GUI of the actual creation frame view.
+        Does a LOT of stuff.
+        """
         self.createFrame = QWidget(self)
         self.cfgrid = QGridLayout()
         self.createFrame.setLayout(self.cfgrid)
@@ -187,14 +230,14 @@ class per_creator(QWidget):
         delLS.clicked.connect(self.delLS)
         self.cfgrid.addWidget(delLS, 2, 8)
 
-        LSL = QLabel(self.createFrame, text="Learned Spells:")
-        self.cfgrid.addWidget(LSL, 0, 7, 1, 2)
+        lsl = QLabel(self.createFrame, text="Learned Spells:")
+        self.cfgrid.addWidget(lsl, 0, 7, 1, 2)
 
         arcanaL = QLabel(self.createFrame, text="Arcana:")
         self.cfgrid.addWidget(arcanaL, 1, 0)
-        list = json_reader.data_list("arcanas")
+        arc_list = json_reader.data_list("arcanas")
         self.arcO = QComboBox(self.createFrame)
-        self.arcO.addItems(list)
+        self.arcO.addItems(arc_list)
         self.arcO.setCurrentIndex(0)
         self.cfgrid.addWidget(self.arcO, 1, 1)
 
@@ -243,33 +286,34 @@ class per_creator(QWidget):
         self.cfgrid.addWidget(self.lslevel, 1, 8)
 
     def addLS(self):
+        """
+        Add a learned spell to the list, based on what was entered.
+        """
         print("Adding learned spell")
-        self.chosenSpell = self.lsSpellO.currentText()
-        try:
-            self.lstext = (int)(self.lslevel.text())
-            if self.lstext <= (int)(self.levelT.text()):
-                raise Exception("")
-            if not (self.chosenSpell == ""):
-                print("Ok")
-                self.lsdic[self.chosenSpell] = self.lslevel.text()
-                self.listLS.addItem(self.chosenSpell + " at level " + self.lslevel.text())
-                self.lslevel.setText("")
-                self.lsSpellO.setCurrentIndex(0)
-                return
-        except:
-            popup("You must enter a level that is greater than the Persona's level.", "Critical")
-            print("Not an integer or level smaller than Persona's level, not saved")
+        chosenSpell = self.lsSpellO.currentText()
+        if (int)(self.lslevel.text()) <= (int)(self.levelT.text()):
+            popup("You cannot add a spell at an earlier level than the Persona's base level", "Critical")
+            return
+        if chosenSpell != "":
+            print("Ok")
+            self.lsdic[chosenSpell] = self.lslevel.text()
+            self.listLS.addItem(chosenSpell + " at level " + self.lslevel.text())
+            self.lslevel.setText("")
+            self.lsSpellO.setCurrentIndex(0)
             return
         popup("You must choose a spell", "Critical")
-        print("You must choose a spell")
-
 
     def delLS(self):
+        """
+        Remove the selected learned spell from the list
+        """
         print("Deleting learned spell")
         key = ""
         i = 0
         while len(self.listLS.currentItem().text()) > i:
-            if self.listLS.currentItem().text()[i] == " " and self.listLS.currentItem().text()[i+1] == "a" and self.listLS.currentItem().text()[i+2] == "t":
+            if self.listLS.currentItem().text()[i] == " " and \
+               self.listLS.currentItem().text()[i+1] == "a" and \
+               self.listLS.currentItem().text()[i+2] == "t":  # TODO EWWWWWW
                 break
             key += self.listLS.currentItem().text()[i]
             i = i + 1
@@ -279,6 +323,11 @@ class per_creator(QWidget):
 
 
     def loadPer(self, name):
+        """
+        Load a certain Persona from file.
+
+        :param str name: name of Persona to load
+        """
         data = json_reader.readOne(name, 'pers')
         self.nameT.setText(data["name"])
         self.textT.setText(data["desc"])
@@ -289,24 +338,50 @@ class per_creator(QWidget):
         self.luckT.setText(data["stats"][4])
         self.levelT.setText(data["level"])
 
-        self.arcO.setCurrentIndex([self.arcO.itemText(i) for i in range(self.arcO.count())].index(data["arcana"]))
+        self.arcO.setCurrentIndex(
+            [self.arcO.itemText(i) for i in range(self.arcO.count())].index(data["arcana"])
+        )
 
-        self.listEL1.setCurrentIndex([self.listEL1.itemText(i) for i in range(self.listEL1.count())].index(data["heritage"][0]))
-        self.listEL2.setCurrentIndex([self.listEL2.itemText(i) for i in range(self.listEL2.count())].index(data["heritage"][1]))
+        self.listEL1.setCurrentIndex(
+            [self.listEL1.itemText(i) for i in range(self.listEL1.count())].index(data["heritage"][0])
+        )
+        self.listEL2.setCurrentIndex(
+            [self.listEL2.itemText(i) for i in range(self.listEL2.count())].index(data["heritage"][1])
+        )
 
-        self.slashO.setCurrentIndex([self.slashO.itemText(i) for i in range(self.slashO.count())].index(data["resistance"][0]))
-        self.strikeO.setCurrentIndex([self.strikeO.itemText(i) for i in range(self.strikeO.count())].index(data["resistance"][1]))
-        self.pierceO.setCurrentIndex([self.pierceO.itemText(i) for i in range(self.pierceO.count())].index(data["resistance"][2]))
-        self.fireO.setCurrentIndex([self.fireO.itemText(i) for i in range(self.fireO.count())].index(data["resistance"][3]))
-        self.iceO.setCurrentIndex([self.iceO.itemText(i) for i in range(self.iceO.count())].index(data["resistance"][4]))
-        self.elecO.setCurrentIndex([self.elecO.itemText(i) for i in range(self.elecO.count())].index(data["resistance"][5]))
-        self.windO.setCurrentIndex([self.windO.itemText(i) for i in range(self.windO.count())].index(data["resistance"][6]))
-        self.lightO.setCurrentIndex([self.lightO.itemText(i) for i in range(self.lightO.count())].index(data["resistance"][7]))
-        self.darkO.setCurrentIndex([self.darkO.itemText(i) for i in range(self.darkO.count())].index(data["resistance"][8]))
+        self.slashO.setCurrentIndex(
+            [self.slashO.itemText(i) for i in range(self.slashO.count())].index(data["resistance"][0])
+        )
+        self.strikeO.setCurrentIndex(
+            [self.strikeO.itemText(i) for i in range(self.strikeO.count())].index(data["resistance"][1])
+        )
+        self.pierceO.setCurrentIndex(
+            [self.pierceO.itemText(i) for i in range(self.pierceO.count())].index(data["resistance"][2])
+        )
+        self.fireO.setCurrentIndex(
+            [self.fireO.itemText(i) for i in range(self.fireO.count())].index(data["resistance"][3])
+        )
+        self.iceO.setCurrentIndex(
+            [self.iceO.itemText(i) for i in range(self.iceO.count())].index(data["resistance"][4])
+        )
+        self.elecO.setCurrentIndex(
+            [self.elecO.itemText(i) for i in range(self.elecO.count())].index(data["resistance"][5])
+        )
+        self.windO.setCurrentIndex(
+            [self.windO.itemText(i) for i in range(self.windO.count())].index(data["resistance"][6])
+        )
+        self.lightO.setCurrentIndex(
+            [self.lightO.itemText(i) for i in range(self.lightO.count())].index(data["resistance"][7])
+        )
+        self.darkO.setCurrentIndex(
+            [self.darkO.itemText(i) for i in range(self.darkO.count())].index(data["resistance"][8])
+        )
 
         i = 0
         for combobox in self.iSpellOs:
-            combobox.setCurrentIndex([combobox.itemText(j) for j in range(combobox.count()-1)].index(data["spellDeck"][i]))
+            combobox.setCurrentIndex(
+                [combobox.itemText(j) for j in range(combobox.count()-1)].index(data["spellDeck"][i])
+            )
             i += 1
 
         self.lsdic = data["spellLearn"]
@@ -317,12 +392,15 @@ class per_creator(QWidget):
         print("Loaded " + data["name"])
 
     def edit(self):
+        """
+        Switch to edit view, also loads the selected Persona.
+        """
         try:
             if self.listP.currentItem().text() != "":
                 if self.createFrame and not popup("Override any unsaved changes?", "Warning"):
                     return
                 self.loadPer(self.listP.currentItem().text())
-        except AttributeError:#To initialize createFrame UI before load
+        except AttributeError:  # To initialize createFrame UI before load
             if self.listP.currentItem().text() != "":
                 temp = self.listP.currentItem().text()
                 self.buttonFrame.close()
@@ -335,6 +413,9 @@ class per_creator(QWidget):
         print("Changed to edit frame")
 
     def save(self):
+        """
+        Validate all info and save to file on disk.
+        """
         if os.path.exists(json_reader.buildPath("data/pers/"+self.nameT.text()+".json")):
             if not popup("Override existing Persona "+self.nameT.text()+"?", "Question"):
                 return
@@ -343,7 +424,9 @@ class per_creator(QWidget):
         for combobox in self.iSpellOs:
             spellDeck.append(combobox.currentText())
         stats = [self.strT.text(), self.magT.text(), self.endT.text(), self.agiT.text(), self.luckT.text()]
-        res = [self.slashO.currentText(), self.strikeO.currentText(), self.pierceO.currentText(), self.fireO.currentText(), self.iceO.currentText(), self.elecO.currentText(), self.windO.currentText(), self.lightO.currentText(), self.darkO.currentText()]
+        res = [self.slashO.currentText(), self.strikeO.currentText(), self.pierceO.currentText(),
+               self.fireO.currentText(), self.iceO.currentText(), self.elecO.currentText(),
+               self.windO.currentText(), self.lightO.currentText(), self.darkO.currentText()]
         try:
             (int)(self.levelT.text())
             (int)(self.strT.text())
@@ -351,15 +434,26 @@ class per_creator(QWidget):
             (int)(self.endT.text())
             (int)(self.agiT.text())
             (int)(self.luckT.text())
-        except:
-            popup("There is a number entry that isn't valid.\nEntries requiring numbers are:\nLEVEL\nSTR\nMAG\nEND\nAGI\nLUCK", "Critical")
+        except ValueError:
+            popup("There is a number entry that isn't valid.\nEntries requiring numbers are:\nLEVEL\nSTR"
+                  "\nMAG\nEND\nAGI\nLUCK", "Critical")
             print("Not Saved")
             return
         if not (self.nameT.text() and not self.nameT.text().isspace()):
             popup("No name entered for your Persona. Name is a required field.", "Critical")
             print("No Name, not saved")
             return
-        toWrite = Persona(self.nameT.text(), self.arcO.currentText(), self.levelT.text(), self.textT.toPlainText(), spellDeck, self.lsdic, stats, res, [self.listEL1.currentText(), self.listEL2.currentText()])
+        toWrite = Persona(
+            self.nameT.text(),
+            self.arcO.currentText(),
+            self.levelT.text(),
+            self.textT.toPlainText(),
+            spellDeck,
+            self.lsdic,
+            stats,
+            res,
+            [self.listEL1.currentText(), self.listEL2.currentText()]
+        )
         json_reader.writeOne(toWrite, 'pers')
         temp = self.nameT.text()
         if (temp not in [self.listP.item(i).text() for i in range(self.listP.count())]):
@@ -368,16 +462,26 @@ class per_creator(QWidget):
         print("Saved Persona")
 
     def remove(self):
+        """
+        Remove a created Persona from the list and delete the file on disk.
+        """
         if self.listP.currentItem().text() == "":
             return
-        if not popup("Are you certain you want to completely remove this Persona?\n(Cannot be undone)", "Warning"):
+        if not popup(
+                "Are you certain you want to completely remove this Persona?\n(Cannot be undone)", "Warning"
+            ):
             return
         print("Removing Persona " + self.listP.currentItem().text())
         json_reader.deletePer(self.listP.currentItem().text())
-        self.listP.takeItem([self.listP.item(i).text() for i in range(self.listP.count())].index(self.listP.currentItem().text()))
-
+        self.listP.takeItem(
+            [self.listP.item(i).text() for i in range(self.listP.count())].index(
+                self.listP.currentItem().text())
+        )
 
     def new(self):
+        """
+        Open an empty Persona edit view.
+        """
         if self.createFrame and not popup("Override any unsaved changes?", "Warning"):
             return
         self.buttonFrame.close()
@@ -387,5 +491,8 @@ class per_creator(QWidget):
         print("Created")
 
     def back(self):
+        """
+        Return to the parent widget.
+        """
         print("Returned to main screen")
         self.mainframe.changeState(self.op)
