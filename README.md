@@ -8,11 +8,12 @@ To use, you can download only `dist/currentWIN/StoryCreator.zip`. Unzip and run 
 ### build it yourself
 To build it yourself, install PySide using
 
-```pip install PySide```
+```pip3.7 install -r requirements.txt```
 
 then run `qtmain.py` as:
 
-```python qtmain.py```
+```python3.7 story-creator/qtmain.py```
 
 
-#### TODO: Creation Guide
+#### Creation Guide
+A simple guide on how to use this application [can be found here](DOC/README.pdf).

@@ -1,8 +1,12 @@
-#Ignore only DS_Store
+# Ignore only DS_Store
 .DS_Story
 
-#Ignore compiled python
+# Ignore compiled python
+__pycache__/
 *.pyc
 
-#Ignore export data
-exportdata/*
+# Ignore export data
+exportdata/
+
+# Ignore vscode config
+.vscode/
