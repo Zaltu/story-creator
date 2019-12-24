@@ -484,6 +484,8 @@ class PersonaUI(QWidget):
         """
         if self.createFrame and not popup("Override any unsaved changes?", "Warning"):
             return
+        if self.createFrame:
+            self.createFrame.close()
         self.buttonFrame.close()
         self.initUI(False)
         self.createFrame.show()
