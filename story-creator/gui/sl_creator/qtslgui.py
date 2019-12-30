@@ -6,7 +6,7 @@ from PySide2.QtWidgets import (QWidget, QGridLayout, QPushButton, QLabel, QCombo
                                QLineEdit)
 from PySide2.QtCore import Qt
 from gui.sl_creator.simulate import Simulation
-from gui.sl_creator.slview import PrettySL
+from gui.sl_creator.node_graph.slnodegraph import PrettySL
 from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
 from libs.sls import SocialLink

@@ -106,7 +106,7 @@ def readPerNames():
     :rtype: list[str]
     """
     chars = glob(buildPath('data/pers/*.json'))
-    return [charname.split('.')[0].split("\\")[-1] for charname in chars]
+    return [charname.split('.')[0].split("/")[-1] for charname in chars]
 
 
 def deleteChar(name):
@@ -135,7 +135,7 @@ def readCharNames():
     :rtype: list[str]
     """
     chars = glob(buildPath('data/chars/*.json'))
-    return [charname.split('.')[0].split("\\")[-1] for charname in chars]
+    return [charname.split('.')[0].split("/")[-1] for charname in chars]
 
 
 def data_list(fetch):
