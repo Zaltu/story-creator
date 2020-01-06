@@ -138,8 +138,7 @@ class SLFrame(QWidget):
 
 class SLBase(QWidget):
     """
-    Some kind of duplicate class for displaying the "real" edit views.
-    IDK anymore.
+    The "List View". Deprecating with NodeGraph view.
 
     :param MainFrame mainframe: application mainframe
     :param QWidget op: parent widget
@@ -203,9 +202,7 @@ class SLBase(QWidget):
 
 class CreationContainer(QWidget):
     """
-    Apparently just another level of parent class for social link display.
-    Man I was stupid.
-    Still am luigi2hands
+    Wrapper around the individual action editors, for things common to all.
 
     :param MainFrame mainframe: application mainframe
     :param QWidget op: parent widget
