@@ -131,6 +131,7 @@ class TreeWidget(NodeGraph):
             pass
 
         self.node_double_clicked.connect(self.op.enter)
+        self.node_selected.connect(self.select_subtree)
         self.initUI()
 
 
@@ -187,3 +188,15 @@ class TreeWidget(NodeGraph):
                     self.depthTracker[currentDepth] = 1
                 self.heightTracker[currentDepth] = 1
                 self.nextRow(self.table[relation], currentDepth + 1)
+
+    def select_subtree(self, node):
+        """
+        Display the uniquely dependent subtree as selected in the view.
+
+        :param PersonaXNode node: the selected node
+        """
+        subtree = self.op.graph.subTree(node.index)
+        for index in self.nodes:
+            if index in subtree:
+                self.nodes[index].set_selected(selected=True)
+            else: self.nodes[index].set_selected(selected=False)
