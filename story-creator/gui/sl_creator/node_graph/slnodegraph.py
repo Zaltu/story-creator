@@ -184,7 +184,7 @@ class TreeWidget(NodeGraph):
                 self.node_type_names[type(self.actions[element[0]])],
                 self.actions[element[0]],
                 name=str(element[0]),
-                pos=[400*element[1], hpos]  # TODO
+                pos=[400*element[1], hpos]
             )
         for node in self.nodes:
             for connection in self.table[node][1:len(self.table[node])]:
