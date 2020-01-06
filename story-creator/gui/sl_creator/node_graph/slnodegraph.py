@@ -3,10 +3,9 @@ Module for the pretty(est) graph view of a social link cutscene and it's interde
 """
 #pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout
-from PySide2.QtCore import Qt
 from NodeGraphQt import (NodeGraph, setup_context_menu)
-from gui.popup import popup
 from gui.sl_creator.node_graph.frames import InfoNode, SpeakNode, CameraNode, MoveNode
+from gui.sl_creator.edit_widgets.edit import CreationContainer
 from libs.action import Info, Speak, Camera, Movement
 
 class NodeSL(QWidget):
@@ -72,41 +71,20 @@ class NodeSL(QWidget):
         print(self.subtree)
         self.initInfoUI(index)
 
-    def deleteSubtree(self):
-        """
-        Delete the subtree of the current selected index.
-        """
-        if not popup("Are you certain you want to delete this item and it's subtree?\n(Everything in red and"
-                     " yellow will be deleted)", "Warning"):
-            return
-        self.graph.delItem(self.lastButtonPressed)
-        self.lab.close()
-        self.initData()
-        self.lastButtonPressed = None
-        self.delete.close()
-        self.delete = None
-        self.subtree = []
-        self.needsRefresh = True
-        self.idLabel.close()
-        self.edit.clicked.disconnect()
-        self.edit.close()
-        self.op.linkstored.save()
-        self.tree.close()
-        self.tree = TreeWidget(self, self.actionObjs, self.actionIDs, self.table)
-        self.grid.addWidget(self.tree, 0, 0, 10, 3)
-
-    def enter(self, index):
+    def enter(self, node):
         """
         Leave the graph view and edit a node.
 
-        :param int index: index of node to edit
+        :param PersonaXNode node: node to edit
         """
-        load = self.graph.getItem(index)
+        load = self.graph.getItem(node.index)
         self.close()
-        self.op.view.setText("Graphic View")
+        self.op.view.setText("Dependency View")
         self.op.view.clicked.disconnect()
         self.op.view.clicked.connect(lambda: self.op.viewF(True))
-        self.op.listview.changeFrame(load, index)
+
+        self.op.i = node.index
+        self.op.cc = CreationContainer(self.mainframe, self.op, load)
 
 
 class TreeWidget(NodeGraph):
@@ -152,6 +130,7 @@ class TreeWidget(NodeGraph):
             # objects due to a poorly implemented factory model.
             pass
 
+        self.node_double_clicked.connect(self.op.enter)
         self.initUI()
 
 
@@ -180,6 +159,7 @@ class TreeWidget(NodeGraph):
             self.nodes[element[0]] = self.create_node(
                 self.node_type_names[type(self.actions[element[0]])],
                 self.actions[element[0]],
+                element[0],
                 name=str(element[0]),
                 pos=[400*element[1], hpos]
             )

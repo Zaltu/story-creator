@@ -20,13 +20,15 @@ class InfoNode(PersonaXNode):
     Node implementation of InfoFrame
 
     :param Info info: the info action this node represents
+    :param int index: the mathgraph index
     """
     # Default node name
     NODE_NAME = "InfoNode"
 
-    def __init__(self, info):
+    def __init__(self, info, index):
         super().__init__()
         self.info = info
+        self.index = index
 
         # InfoFrame has only one text property.
         self.text = self.add_text_input("info_text", "Info", info.text)
@@ -42,13 +44,15 @@ class SpeakNode(PersonaXNode):
     Node implementation of SpeakFrame
 
     :param Speak speak: the speak action this node represents
+    :param int index: the mathgraph index
     """
     # Default node name
     NODE_NAME = "SpeakNode"
 
-    def __init__(self, speak):
+    def __init__(self, speak, index):
         super().__init__()
         self.speak = speak
+        self.index = index
 
         ## SpeakFrame properties
         self.text = self.add_text_input("text", "Text", speak.text)
@@ -70,13 +74,15 @@ class CameraNode(PersonaXNode):
     Node implementation of CameraFrame
 
     :param Camera camera: camera action this node represents
+    :param int index: the mathgraph index
     """
     # Default node name
     NODE_NAME = "CameraNode"
 
-    def __init__(self, camera):
+    def __init__(self, camera, index):
         super().__init__()
         self.camera = camera
+        self.index = index
 
         ## CameraFrame properties
         self.place = self.add_combo_menu("place", "Location", json_reader.data_list("locations"))
@@ -100,13 +106,15 @@ class MoveNode(PersonaXNode):
     Node implementation of MoveFrame
 
     :param Movement move: move action this node represents
+    :param int index: the mathgraph index
     """
     # Default node name
     NODE_NAME = "MoveNode"
 
-    def __init__(self, move):
+    def __init__(self, move, index):
         super().__init__()
         self.move = move
+        self.index = index
 
         ## MoveFrame properties
         self.lx = self.add_text_input("lx", "Go to x", move.destination[0])

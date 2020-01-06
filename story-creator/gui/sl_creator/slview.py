@@ -1,12 +1,12 @@
 """
 Module for the pretty(ier) graph view of a social link cutscene and it's interdependencies.
-TODO replace w/ NodeGraphQT
 """
 #pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout, QLabel, QPushButton, QHBoxLayout, QScrollArea
 from PySide2.QtGui import QPalette, QPen, QPainter
 from PySide2.QtCore import Qt, QPoint
 from gui.popup import popup
+from gui.sl_creator.edit_widgets.edit import CreationContainer
 from libs.action import Speak
 
 class PrettySL(QWidget):
@@ -171,10 +171,12 @@ class PrettySL(QWidget):
         """
         load = self.graph.getItem(index)
         self.close()
-        self.op.view.setText("Graphic View")
+        self.op.view.setText("Dependency View")
         self.op.view.clicked.disconnect()
         self.op.view.clicked.connect(lambda: self.op.viewF(True))
-        self.op.listview.changeFrame(load, index)
+
+        self.op.i = index
+        self.op.cc = CreationContainer(self.mainframe, self.op, load)
 
 
 
