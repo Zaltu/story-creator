@@ -9,7 +9,7 @@ from gui.popup import popup
 from gui.sl_creator.node_graph.frames import InfoNode, SpeakNode, CameraNode, MoveNode
 from libs.action import Info, Speak, Camera, Movement
 
-class PrettySL(QWidget):
+class NodeSL(QWidget):
     """
     This is the base widget to contain the graph view of the cutscene.
 
@@ -59,9 +59,6 @@ class PrettySL(QWidget):
 
         self.tree = TreeWidget(self, self.actionObjs, self.actionIDs, self.table)
         self.grid.addWidget(self.tree.widget, 0, 0, 10, 3)
-
-        self.setWindowModality(Qt.ApplicationModal)
-        self.show()
 
     def trackIndex(self, index):
         """

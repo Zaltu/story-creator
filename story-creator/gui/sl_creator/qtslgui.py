@@ -6,7 +6,8 @@ from PySide2.QtWidgets import (QWidget, QGridLayout, QPushButton, QLabel, QCombo
                                QLineEdit)
 from PySide2.QtCore import Qt
 from gui.sl_creator.simulate import Simulation
-from gui.sl_creator.node_graph.slnodegraph import PrettySL
+from gui.sl_creator.node_graph.slnodegraph import NodeSL
+from gui.sl_creator.slview import PrettySL
 from gui.sl_creator.slinfo import LinkInfo
 from gui.popup import popup
 from libs.sls import SocialLink
@@ -36,7 +37,7 @@ class SLFrame(QWidget):
 
         # View initializers...
         self.graphicview = None
-        self.listview = None
+        self.nodeview = None
         self.sim = None
         self.cc = None
 
@@ -66,7 +67,7 @@ class SLFrame(QWidget):
         back.clicked.connect(self.back)
         self.grid.addWidget(back, 2, 3)
 
-        self.listview = SLBase(self.mainframe, self)
+        self.viewF(False)  # Initialize in NodeSL view
 
     def back(self):
         """
@@ -107,7 +108,7 @@ class SLFrame(QWidget):
                 popup("Nothing to show!", "Information")
                 return
             self.graphicview = PrettySL(self.mainframe, self)
-            self.listview.close()
+            self.nodeview.close()
             if self.cc:
                 self.cc.close()
             self.view.setText("List View")
@@ -119,12 +120,12 @@ class SLFrame(QWidget):
             if self.cc:
                 self.cc.show()
             else:
-                self.listview = SLBase(self.mainframe, self)
+                self.nodeview = NodeSL(self.mainframe, self)
             if self.graphicview:
                 self.graphicview.close()
             self.view.setText("Graphic View")
-            self.grid.addWidget(self.listview, 0, 0, 1, 4)
-            self.listview.show()
+            self.grid.addWidget(self.nodeview, 0, 0, 1, 4)
+            self.nodeview.show()
             self.view.clicked.disconnect()
             self.view.clicked.connect(lambda: self.viewF(True))
         self.mainframe.center()
