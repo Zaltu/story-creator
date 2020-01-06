@@ -29,7 +29,7 @@ class InfoNode(PersonaXNode):
         self.info = info
 
         # InfoFrame has only one text property.
-        self.text = self.add_text_input("info_text", info.text)
+        self.text = self.add_text_input("info_text", "Info", info.text)
 
         ## Add IO
         # Any number of previous nodes can connect.
