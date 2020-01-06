@@ -7,7 +7,7 @@ from PySide2.QtCore import Qt
 from NodeGraphQt import (NodeGraph, setup_context_menu)
 from gui.popup import popup
 from gui.sl_creator.node_graph.frames import InfoNode, SpeakNode, CameraNode, MoveNode
-from libs.action import Info, Speak, Camera
+from libs.action import Info, Speak, Camera, Movement
 
 class PrettySL(QWidget):
     """
@@ -132,6 +132,12 @@ class TreeWidget(NodeGraph):
         self.op = op
         self.currentDepth = 0
 
+        self.node_type_names = {
+            Info: "personax.InfoNode",
+            Speak: "personax.SpeakNode",
+            Camera: "personax.CameraNode",
+            Movement: "personax.MoveNode"
+        }
         try:
             setup_context_menu(self)
             # registered nodes.
@@ -160,40 +166,26 @@ class TreeWidget(NodeGraph):
         self.processed = [0]
         self.map = [(0, 0)]
         self.depthTracker = {}
+        self.heightTracker = {}
 
         self.nextRow(self.table[0], 1)
 
         self.nodes = {}
 
+
         for element in self.map:
-            if isinstance(self.actions[element[0]], Info):
-                self.nodes[element[0]] = self.create_node(
-                    "personax.InfoNode",
-                    self.actions[element[0]],
-                    name=str(element[0]),
-                    pos=[0, 0]  # TODO
-                )
-            elif isinstance(self.actions[element[0]], Speak):
-                self.nodes[element[0]] = self.create_node(
-                    "personax.SpeakNode",
-                    self.actions[element[0]],
-                    name=str(element[0]),
-                    pos=[0, 0]  # TODO
-                )
-            elif isinstance(self.actions[element[0]], Camera):
-                self.nodes[element[0]] = self.create_node(
-                    "personax.CameraNode",
-                    self.actions[element[0]],
-                    name=str(element[0]),
-                    pos=[0, 0]  # TODO
-                )
-            else:
-                self.nodes[element[0]] = self.create_node(
-                    "personax.MoveNode",
-                    self.actions[element[0]],
-                    name=str(element[0]),
-                    pos=[0, 0]  # TODO
-                )
+            elementsPerDepth = self.depthTracker.get(element[1], 1)
+            hpos = 200 * self.heightTracker.get(element[1], 1)
+            hpos -= (200 * elementsPerDepth)/2
+            if elementsPerDepth != 1:
+                self.heightTracker[element[1]] += 1
+
+            self.nodes[element[0]] = self.create_node(
+                self.node_type_names[type(self.actions[element[0]])],
+                self.actions[element[0]],
+                name=str(element[0]),
+                pos=[400*element[1], hpos]  # TODO
+            )
         for node in self.nodes:
             for connection in self.table[node][1:len(self.table[node])]:
                 self.nodes[node].set_output(0, self.nodes[connection].input(0))
@@ -216,4 +208,5 @@ class TreeWidget(NodeGraph):
                     self.depthTracker[currentDepth] += 1
                 except KeyError:
                     self.depthTracker[currentDepth] = 1
+                self.heightTracker[currentDepth] = 1
                 self.nextRow(self.table[relation], currentDepth + 1)
