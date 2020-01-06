@@ -4,6 +4,7 @@ Module for the pretty(est) graph view of a social link cutscene and it's interde
 #pylint: disable=no-name-in-module
 from PySide2.QtWidgets import QWidget, QGridLayout
 from NodeGraphQt import (NodeGraph, setup_context_menu)
+from gui.popup import popup
 from gui.sl_creator.node_graph.frames import InfoNode, SpeakNode, CameraNode, MoveNode
 from gui.sl_creator.edit_widgets.edit import CreationContainer
 from libs.action import Info, Speak, Camera, Movement
@@ -132,6 +133,8 @@ class TreeWidget(NodeGraph):
 
         self.node_double_clicked.connect(self.op.enter)
         self.node_selected.connect(self.select_subtree)
+        self.nodes_deleted.connect(self.warn_deleted)
+
         self.initUI()
 
 
@@ -200,3 +203,6 @@ class TreeWidget(NodeGraph):
             if index in subtree:
                 self.nodes[index].set_selected(selected=True)
             else: self.nodes[index].set_selected(selected=False)
+
+    def warn_deleted(self, dellist):
+        popup("%s actions have been deleted (CTRL+Z to undo)" % len(dellist), "Warning")
