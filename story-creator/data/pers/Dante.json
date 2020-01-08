@@ -1,1 +1,37 @@
-{"stats": ["1", "1", "1", "1", "1"], "name": "Dante", "level": "5", "spellDeck": ["", "", "", "", "", ""], "resistance": ["Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal"], "arcana": "Hermit", "heritage": ["", ""], "spellLearn": {}, "desc": ""}
+{
+    "stats": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+    ],
+    "name": "Dante",
+    "level": "5",
+    "spellDeck": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "resistance": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal"
+    ],
+    "arcana": "Hermit",
+    "heritage": [
+        "",
+        ""
+    ],
+    "spellLearn": {},
+    "desc": ""
+}

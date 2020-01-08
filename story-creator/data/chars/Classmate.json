@@ -1,1 +1,5 @@
-{"important": false, "name": "Classmate", "desc": "Generic classmate for use in cutscenes."}
+{
+    "important": false,
+    "name": "Classmate",
+    "desc": "Generic classmate for use in cutscenes."
+}

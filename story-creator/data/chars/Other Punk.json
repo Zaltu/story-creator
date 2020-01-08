@@ -1,1 +1,5 @@
-{"important": false, "name": "Other Punk", "desc": "Generic character for use in cutscenes."}
+{
+    "important": false,
+    "name": "Other Punk",
+    "desc": "Generic character for use in cutscenes."
+}

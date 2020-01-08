@@ -1,1 +1,43 @@
-{"name": "Jack Frost", "arcana": "Magician", "level": "16", "desc": "A spirit originating from England. He is a snow elf who brings in cold weather during the winter and is thought to be responsible for the frost that forms on the windows of homes and buildings.", "spellDeck": ["Mabufu", "", "Ice Break", "", "Me Patra", ""], "spellLearn": {"Ice Boost": "18", "Bufula": "19", "Dodge Fire": "20", "Mind Charge": "25"}, "stats": ["10", "14", "12", "11", "8"], "resistance": ["Normal", "Normal", "Normal", "Weak", "Null", "Normal", "Normal", "Normal", "Normal"], "heritage": ["Ice", ""], "evolveName": null}
+{
+    "name": "Jack Frost",
+    "arcana": "Magician",
+    "level": "16",
+    "desc": "A spirit originating from England. He is a snow elf who brings in cold weather during the winter and is thought to be responsible for the frost that forms on the windows of homes and buildings.",
+    "spellDeck": [
+        "Mabufu",
+        "",
+        "Ice Break",
+        "",
+        "Me Patra",
+        ""
+    ],
+    "spellLearn": {
+        "Ice Boost": "18",
+        "Bufula": "19",
+        "Dodge Fire": "20",
+        "Mind Charge": "25"
+    },
+    "stats": [
+        "10",
+        "14",
+        "12",
+        "11",
+        "8"
+    ],
+    "resistance": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Weak",
+        "Null",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal"
+    ],
+    "heritage": [
+        "Ice",
+        ""
+    ],
+    "evolveName": null
+}

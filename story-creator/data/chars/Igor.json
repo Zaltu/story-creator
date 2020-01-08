@@ -1,1 +1,5 @@
-{"important": true, "name": "Igor", "desc": "My name is Igor. Welcome to the Velvet Room."}
+{
+    "important": true,
+    "name": "Igor",
+    "desc": "My name is Igor. Welcome to the Velvet Room."
+}

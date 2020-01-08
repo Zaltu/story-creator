@@ -1,1 +1,37 @@
-{"stats": ["1", "1", "1", "1", "1"], "name": "Virgil", "level": "1", "spellDeck": ["", "", "", "", "", ""], "resistance": ["Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal", "Normal"], "arcana": "Emperor", "heritage": ["", ""], "spellLearn": {}, "desc": ""}
+{
+    "stats": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+    ],
+    "name": "Virgil",
+    "level": "1",
+    "spellDeck": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "resistance": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal"
+    ],
+    "arcana": "Emperor",
+    "heritage": [
+        "",
+        ""
+    ],
+    "spellLearn": {},
+    "desc": ""
+}

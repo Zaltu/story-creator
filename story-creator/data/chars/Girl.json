@@ -1,1 +1,5 @@
-{"important": false, "name": "Girl", "desc": "Generic character for use in cutscenes"}
+{
+    "important": false,
+    "name": "Girl",
+    "desc": "Generic character for use in cutscenes"
+}
