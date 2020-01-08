@@ -1,0 +1,391 @@
+{
+    "arcana": "Lovers",
+    "cutinfo": {},
+    "cutscenes": {
+        "1_0": {
+            "id": "Lovers1_0",
+            "items": [
+                [
+                    {
+                        "text": "Sitting in an unknown location (TBD), the girl is alone by herself."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Why did it have to end up like this..."
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "The girl finally notices you're there."
+                    },
+                    4
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh."
+                    },
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I've seen you around before."
+                    },
+                    6,
+                    10
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "My name's {name}."
+                    },
+                    7
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Nice to meet you I guess..."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "My name's {lovername}."
+                    },
+                    9
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So, did you come here just to laugh at me?"
+                    },
+                    17,
+                    34,
+                    36
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Where's your boyfriend?"
+                    },
+                    11
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Could you not?"
+                    },
+                    13
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's not like it's any of your business!"
+                    },
+                    14
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    15
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...Sorry... I didn't mean to be rude."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Just a little bit."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "text": "\"Grumble\" effect plays over her head."
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "How would you like it if your girlfriend just up and left you for no reason?"
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    21
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    22
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..Say..."
+                    },
+                    23
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "There's no way someone like you would have a girlfriend..."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So how about it? You're mine now."
+                    },
+                    25
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Uhh..."
+                    },
+                    26
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You should be happy to get someone like me."
+                    },
+                    27
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Here's my number."
+                    },
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You got {lovername}'s phone number."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Let's hang out soon, ok? I can't wait darling!"
+                    },
+                    30
+                ],
+                [
+                    {
+                        "text": "She gets up, looks at MC, then starts walking away. Stops before leaving frame."
+                    },
+                    31
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Hmph. I'll show him."
+                    },
+                    32
+                ],
+                [
+                    {
+                        "text": "She finishes leaving frame."
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "...You're in a relationship, apparently."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Hahahaha"
+                    },
+                    35
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Shut up!"
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Why would I do that?"
+                    },
+                    37
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yeah, right."
+                    },
+                    38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "As if you couldn't tell I was..."
+                    },
+                    18
+                ]
+            ]
+        }
+    },
+    "finalpersona": {},
+    "info": "",
+    "pseudoname": "",
+    "requiredPoints": {}
+}

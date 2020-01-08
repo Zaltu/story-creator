@@ -1,5 +1,5 @@
 {
-    "important": true,
     "name": "LoversLink",
-    "desc": "Lover social link and party member. Descripton pending."
+    "desc": "Lover social link. Descripton pending.",
+    "important": true
 }
