@@ -205,4 +205,9 @@ class TreeWidget(NodeGraph):
             else: self.nodes[index].set_selected(selected=False)
 
     def warn_deleted(self, dellist):
-        popup("%s actions have been deleted (CTRL+Z to undo)" % len(dellist), "Warning")
+        """
+        Warn the user that they deleted some actions.
+
+        :param list dellist: list of deleted node ids
+        """
+        popup("%s actions will be deleted (CTRL+Z to undo)" % len(dellist), "Warning")
