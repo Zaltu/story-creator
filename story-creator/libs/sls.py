@@ -38,11 +38,11 @@ class SocialLink():
         """
         try:
             fullLink = json_reader.readLink(self.arcana)
-        except IOError:
+            assert fullLink
+        except AssertionError:
             print("No existing link")
             return
         tempdic = fullLink["cutscenes"]
-        print(tempdic)
         for cid, graph in tempdic.items():
             self.cutscenes[cid] = MathGraph(graph["id"]).loadGraph(graph["items"])
 
@@ -74,7 +74,7 @@ class SocialLink():
         try:
             toreturn = self.cutscenes[lid]
             print("Link already exists!")
-        except IndexError:
+        except KeyError:
             toreturn = self.cutscenes[lid] = MathGraph(self.arcana+lid)
             print(toreturn.items)
 
