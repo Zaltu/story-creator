@@ -31,7 +31,7 @@ def writeLink(link):
     :param SocialLink link: social link to write.
     """
     with open(buildPath('data/' + link.arcana + '_link.json'), 'w') as outfile:
-        json.dump(link, outfile, default=lambda o: o.__dict__, sort_keys=True)
+        json.dump(link, outfile, default=lambda o: o.__dict__, sort_keys=True, indent=4)
     outfile.close()
 
 
@@ -78,7 +78,7 @@ def writeOne(entity, creatureType):
     :param str creatureType: type of creature, for filepath purposes
     """
     with open(buildPath('data/%s/%s.json' % (creatureType, entity.getName())), 'w') as outfile:
-        json.dump(entity.__dict__, outfile)
+        json.dump(entity.__dict__, outfile, indent=4)
     outfile.close()
 
 
@@ -106,7 +106,7 @@ def readPerNames():
     :rtype: list[str]
     """
     chars = glob(buildPath('data/pers/*.json'))
-    return [charname.split('.')[0].split("\\")[-1] for charname in chars]
+    return [os.path.basename(charname.split('.')[0]) for charname in chars]
 
 
 def deleteChar(name):
@@ -135,7 +135,7 @@ def readCharNames():
     :rtype: list[str]
     """
     chars = glob(buildPath('data/chars/*.json'))
-    return [charname.split('.')[0].split("\\")[-1] for charname in chars]
+    return [os.path.basename(charname.split('.')[0]) for charname in chars]
 
 
 def data_list(fetch):

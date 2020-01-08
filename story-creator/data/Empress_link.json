@@ -1,1 +1,518 @@
-{"arcana": "Empress", "cutinfo": {}, "cutscenes": {"1_0": {"id": "Empress1_0", "items": [[{"text": "A little ways to the side of the school grounds, a group of students (punks) are talking. A girl is watching them from a bush."}, 1], [{"angle": {}, "emotion": "Angry", "points": {"Empress": 5}, "speaker": "Punk", "text": "Man, that fucking teacher pisses me off."}, 2], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Other Punk", "text": "Yeah, who cares about history anyway? Shit's lame."}, 3], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Mean-Looking Student", "text": "Man, I wish I had a smoke with me right now..."}, 4], [{"text": "Camera slightly pans to Kaori, hidden in the bush. All characters still in frame though."}, 5], [{"angle": {}, "emotion": "Sad", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "But smoking isn't allowed on school grounds..."}, 6], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Other Punk", "text": "Just go see the usual guy, he's got some."}, 7], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Mean-Looking Student", "text": "Man, I would but I already used the money that freak otaku \"gave\" me on... Other goods."}, 8], [{"angle": {}, "emotion": "Surprised", "points": {"Empress": 5}, "speaker": "Punk", "text": "Oh man, you actually got it!?"}, 9], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Other Punk", "text": "Dude, let's go!"}, 10], [{"text": "Three punks run off screen. The camera pans back towards Kaori fully and she \"backs out\" of the bush."}, 11], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "What did they..."}, 12], [{"text": "Kaori turns around and sees MC."}, 13], [{"angle": {}, "emotion": "Surprised", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Oh!"}, 14, 15], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "Sorry."}, 16], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "What are you doing?"}, 18], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Ah..."}, 17], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "It's no trouble, you just surprised me."}, 18], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Umm..."}, 19], [{"angle": {}, "emotion": "Embarrassed", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "I... I wasn't spying or anything! I just..."}, 20], [{"angle": {}, "emotion": "Embarrassed", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Well..."}, 21, 30], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "It's fine, I saw nothing."}, 22], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "No, you're right. I'm at fault here."}, 23], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Narrator", "text": "The girl seems relieved."}, 24], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "They're a group of delinquents that often skip class to smoke."}, 25], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "That's against the rules, so I followed them to see if I could convince them to stop."}, 26], [{"angle": {}, "emotion": "Sad", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "In the end, I was too afraid to do anything though..."}, 27], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "I'll be going now."}, 28], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "My name's Kaori Nakano by the way."}, 29], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Bye!"}], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "That looks like spying to me."}, 31], [{"angle": {}, "emotion": "Embarrassed", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Umm... I just..."}, 32], [{"angle": {}, "emotion": "Sad", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Oh, fine! But it's not what you think!"}, 33], [{"angle": {}, "emotion": "Sad", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "I'm just worried about them!"}, 34], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "No, that doesn't sound right..."}, 35], [{"angle": {}, "emotion": "Sad", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Look, I'm sorry. Please don't tell anyone!"}, 28]]}, "2_0": {"id": "Empress2_0", "items": [[{"text": "You can walk up to and talk to Kaori somewhere on the map. She just turns around towards you."}, 1], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Hmm...?"}, 2], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "Oh! You're the one from that time!"}, 3, 4, 5], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "Who are you?"}], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "Hi."}], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "MC", "text": "Hey, you're that stalker."}, 6], [{"angle": {}, "emotion": "Embarrassed", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "H-Hey, could you not say it like that?"}, 7], [{"angle": {}, "emotion": "Normal", "points": {"Empress": 5}, "speaker": "Kaori Nakano", "text": "I already told you what happened..."}]]}}, "finalpersona": {}, "info": "", "pseudoname": "", "requiredPoints": {}}
+{
+    "arcana": "Empress",
+    "cutinfo": {},
+    "cutscenes": {
+        "1_0": {
+            "id": "Empress1_0",
+            "items": [
+                [
+                    {
+                        "text": "A little ways to the side of the school grounds, a group of students (punks) are talking. A girl is watching them from a bush."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Punk",
+                        "text": "Man, that fucking teacher pisses me off."
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Other Punk",
+                        "text": "Yeah, who cares about history anyway? Shit's lame."
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Mean-Looking Student",
+                        "text": "Man, I wish I had a smoke with me right now..."
+                    },
+                    4
+                ],
+                [
+                    {
+                        "text": "Camera slightly pans to Kaori, hidden in the bush. All characters still in frame though."
+                    },
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "But smoking isn't allowed on school grounds..."
+                    },
+                    6
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Other Punk",
+                        "text": "Just go see the usual guy, he's got some."
+                    },
+                    7
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Mean-Looking Student",
+                        "text": "Man, I would but I already used the money that freak otaku \"gave\" me on... Other goods."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Punk",
+                        "text": "Oh man, you actually got it!?"
+                    },
+                    9
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Other Punk",
+                        "text": "Dude, let's go!"
+                    },
+                    10
+                ],
+                [
+                    {
+                        "text": "Three punks run off screen. The camera pans back towards Kaori fully and she \"backs out\" of the bush."
+                    },
+                    11
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "What did they..."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "text": "Kaori turns around and sees MC."
+                    },
+                    13
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Oh!"
+                    },
+                    14,
+                    15
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "Sorry."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "What are you doing?"
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Ah..."
+                    },
+                    17
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "It's no trouble, you just surprised me."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Umm..."
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "I... I wasn't spying or anything! I just..."
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Well..."
+                    },
+                    21,
+                    30
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "It's fine, I saw nothing."
+                    },
+                    22
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "No, you're right. I'm at fault here."
+                    },
+                    23
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Narrator",
+                        "text": "The girl seems relieved."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "They're a group of delinquents that often skip class to smoke."
+                    },
+                    25
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "That's against the rules, so I followed them to see if I could convince them to stop."
+                    },
+                    26
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "In the end, I was too afraid to do anything though..."
+                    },
+                    27
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "I'll be going now."
+                    },
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "My name's Kaori Nakano by the way."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Bye!"
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "That looks like spying to me."
+                    },
+                    31
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Umm... I just..."
+                    },
+                    32
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Oh, fine! But it's not what you think!"
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "I'm just worried about them!"
+                    },
+                    34
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "No, that doesn't sound right..."
+                    },
+                    35
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Look, I'm sorry. Please don't tell anyone!"
+                    },
+                    28
+                ]
+            ]
+        },
+        "2_0": {
+            "id": "Empress2_0",
+            "items": [
+                [
+                    {
+                        "text": "You can walk up to and talk to Kaori somewhere on the map. She just turns around towards you."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Hmm...?"
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "Oh! You're the one from that time!"
+                    },
+                    3,
+                    4,
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "Who are you?"
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "Hi."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "MC",
+                        "text": "Hey, you're that stalker."
+                    },
+                    6
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "H-Hey, could you not say it like that?"
+                    },
+                    7
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {
+                            "Empress": 5
+                        },
+                        "speaker": "Kaori Nakano",
+                        "text": "I already told you what happened..."
+                    }
+                ]
+            ]
+        }
+    },
+    "finalpersona": {},
+    "info": "",
+    "pseudoname": "",
+    "requiredPoints": {}
+}
