@@ -657,7 +657,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "I just love spending time with you like this darling."
-                    }
+                    },
+                    44
                 ],
                 [
                     {
@@ -666,7 +667,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "Was this a bad time for a date?"
-                    }
+                    },
+                    54
                 ],
                 [
                     {
@@ -793,6 +795,156 @@
                         "text": "She gets up."
                     },
                     38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    45
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yeah, me too!"
+                    },
+                    46
+                ],
+                [
+                    {
+                        "text": "She looks to the side (trying to convey to the player that she says this under her breath)."
+                    },
+                    47
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Ugh..."
+                    },
+                    48
+                ],
+                [
+                    {
+                        "text": "She looks back up."
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So how's your coffee darling?"
+                    },
+                    50,
+                    52
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "....."
+                    },
+                    51
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Delicious, isn't it?"
+                    },
+                    34
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "It's great!"
+                    },
+                    53
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'm so glad you like it!"
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "No, of course not."
+                    },
+                    55
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Look at all these other people here doing the same."
+                    },
+                    56
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And out of everyone here, we're the happiest, right?"
+                    },
+                    57
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    58
+                ],
+                [
+                    {
+                        "text": "She takes a sip of her coffee."
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    39,
+                    32
                 ]
             ]
         }
