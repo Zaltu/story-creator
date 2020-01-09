@@ -41,7 +41,7 @@ class OP(QWidget):
         imageLabel = QLabel(self)
         logo = QPixmap(json_reader.buildPath("creator_logo.png"))
         imageLabel.setPixmap(logo)
-        #self.grid.addWidget(imageLabel, 0, 0)
+        self.grid.addWidget(imageLabel, 0, 0)
 
         intframe = QWidget()
         self.grid.addWidget(intframe, 0, 1)

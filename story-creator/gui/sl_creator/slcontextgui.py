@@ -69,7 +69,7 @@ class SLUI(QWidget):
         defaultCard = QPixmap(json_reader.buildPath("int/cards/card.png"))
         self.card.setPixmap(defaultCard)
         self.card.setAlignment(Qt.AlignHCenter)
-        #self.grid.addWidget(self.card, 0, 0)
+        self.grid.addWidget(self.card, 0, 0)
 
         self.text = QLabel(self, text="")
         self.text.setFixedSize(400, 250)
