@@ -1,6 +1,8 @@
 {
     "arcana": "Lovers",
-    "cutinfo": {},
+    "cutinfo": {
+        "1_0": ""
+    },
     "cutscenes": {
         "1_0": {
             "id": "Lovers1_0",
@@ -248,7 +250,8 @@
                         "speaker": "LoversLink",
                         "text": "So how about it? You're mine now."
                     },
-                    25
+                    25,
+                    39
                 ],
                 [
                     {
@@ -380,12 +383,431 @@
                         "text": "As if you couldn't tell I was..."
                     },
                     18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Yes!"
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Geez, don't get so excited. It's not like we're that close."
+                    },
+                    27
+                ]
+            ]
+        },
+        "2_0": {
+            "id": "Lovers2_0",
+            "items": [
+                [
+                    {
+                        "text": "Link starts when you approach her, really. Location TBD."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Great! I'm so excited for our first date, darling!"
+                    },
+                    2
+                ],
+                [
+                    {
+                        "text": "MC takes a step forward, she takes a step backwards."
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yep, I can tell just from looking at you that you're excited too."
+                    },
+                    4
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know just the perfect thing for a first date."
+                    },
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "There's a coffee shop not to far from here."
+                    },
+                    6
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's got the perfect romantic atmosphere."
+                    },
+                    7,
+                    11
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Meh..."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Too bad, that's where we're going."
+                    },
+                    9
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Now get a move on, go!"
+                    },
+                    10
+                ],
+                [
+                    {
+                        "text": "Fade out and walk into cafe, look around."
+                    },
+                    14
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Sounds nice."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Of course! I'm the perfect girlfriend after all."
+                    },
+                    13
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Follow me."
+                    },
+                    10
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "The cafe is full of couples sipping their drinks and holding hands."
+                    },
+                    15
+                ],
+                [
+                    {
+                        "text": "LoverLink looks around."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    17
+                ],
+                [
+                    {
+                        "text": "Waiter walks forward."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Waiter",
+                        "text": "Welcome. Table for two I imagine?"
+                    },
+                    19
+                ],
+                [
+                    {
+                        "text": "LoverLink looks around again."
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Huh? Oh, yes."
+                    },
+                    21
+                ],
+                [
+                    {
+                        "text": "Switch camera to them sitting at opposite ends of a table."
+                    },
+                    22
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    23
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "text": "Sweatdrop animation above MC's head."
+                    },
+                    25
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What? What do you want?"
+                    },
+                    26,
+                    27,
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Having fun?"
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I just love spending time with you like this darling."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Was this a bad time for a date?"
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yeah this is great."
+                    },
+                    30
+                ],
+                [
+                    {
+                        "text": "Grumble sprite over her head as she chugs her coffee."
+                    },
+                    31
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Look at us, the perfect happy couple."
+                    },
+                    32,
+                    39
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "It's so great to spend time with you."
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "..."
+                    },
+                    34
+                ],
+                [
+                    {
+                        "text": "She chugs her coffee again."
+                    },
+                    35
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Well, I'm done, so I'm leaving."
+                    },
+                    36
+                ],
+                [
+                    {
+                        "text": "She gets up."
+                    },
+                    37
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Enjoy the rest of your coffee, darling."
+                    },
+                    38
+                ],
+                [
+                    {
+                        "text": "Screen fades, then back in as you sit alone. Sweatdrop sprite."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "....."
+                    },
+                    40
+                ],
+                [
+                    {
+                        "text": "MC chugs his coffee."
+                    },
+                    41
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh look at that you're done."
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Guess it's time to go then darling!"
+                    },
+                    43
+                ],
+                [
+                    {
+                        "text": "She gets up."
+                    },
+                    38
                 ]
             ]
         }
     },
     "finalpersona": {},
-    "info": "",
-    "pseudoname": "",
-    "requiredPoints": {}
+    "info": "I have an idea about someone approaching the MC as \"revenge\" for someone else dumping them. The whole original aspect of the arcana pertaining to \"crossroads\" I feel may also pertain to parting ways as oppose to coming together, and knowing when roads must part again. The reverse actually being that the MC and this person stay together, just to spite the other person (who has already made their peace, and probably did nothing wrong per say).\n\nI think that in order for the \"random\" approaching the MC to make somewhat sense, this is a character that would have to have appeared in the past. It could be another social link which, as a side element, invloves a breakup. It could be a social link that's unlocked by repeatedly talking to certain NPCs while wandering around the maps. The characters would have to speak to each other at some point, one way or another.\n",
+    "pseudoname": "Lovesick Girl",
+    "requiredPoints": {
+        "1": {
+            "0": {
+                "acad": 1,
+                "charm": 1,
+                "courage": 1,
+                "points": 0
+            }
+        }
+    }
 }
