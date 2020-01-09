@@ -90,7 +90,8 @@ class PrettySL(QWidget):
         self.needsRefresh = True
         self.lastButtonPressed = index
         self.subtree = self.graph.subTree(index)
-        print(self.subtree)
+        # Request all the lines and boxes be redrawn.
+        self.tree.update()
         self.initInfoUI(index)
 
     def deleteSubtree(self):
