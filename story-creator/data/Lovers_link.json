@@ -1,7 +1,9 @@
 {
     "arcana": "Lovers",
     "cutinfo": {
-        "1_0": ""
+        "1_0": "",
+        "2_0": "The player approaches her for a date, but she seems slightly unenthusiastic about it.",
+        "3_0": "This time she's been really persistent, trying to get the MC to come with her."
     },
     "cutscenes": {
         "1_0": {
@@ -947,6 +949,857 @@
                     32
                 ]
             ]
+        },
+        "3_0": {
+            "id": "Lovers3_0",
+            "items": [
+                [
+                    {
+                        "text": "Starting location TBD."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Finally!"
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "This time we're going to the mall."
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "There's a great sale today so don't you dare complain again."
+                    },
+                    4
+                ],
+                [
+                    {
+                        "text": "She starts walking off, but stops before leaving frame."
+                    },
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What are you waiting for, hurry up!"
+                    },
+                    6
+                ],
+                [
+                    {
+                        "text": "She walks off frame."
+                    },
+                    7
+                ],
+                [
+                    {
+                        "text": "Distress sripte on MC, and he runs after her."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "text": "Camera change to the mall area. LoverLink and MC walk in. There's a few people, but two in particular near a store exit."
+                    },
+                    9
+                ],
+                [
+                    {
+                        "text": "She stops and looks around."
+                    },
+                    10
+                ],
+                [
+                    {
+                        "text": "Exclamation sprite when she sees them."
+                    },
+                    11
+                ],
+                [
+                    {
+                        "text": "We walks over to \"near\" them (basically within earshot)."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Thank you so much for going shopping with me darling!"
+                    },
+                    13
+                ],
+                [
+                    {
+                        "text": "She gets up really close to MC."
+                    },
+                    14
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "I just love spending this time with you darling!"
+                    },
+                    15
+                ],
+                [
+                    {
+                        "text": "Question mark sprite appears over guy's head."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Are you OK?"
+                    },
+                    17
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'm feeling great darling."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Is there anything you want to do after this darling?"
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We could go to the cafe, watch a movie."
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know how much you wanted to see that new release."
+                    },
+                    21
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What was is again?"
+                    },
+                    22
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Revengers: Last Level?"
+                    },
+                    23
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Or we could take it easy and, you know..."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Head back to my place and relax?"
+                    },
+                    25
+                ],
+                [
+                    {
+                        "text": "Interrobang and distress sprites on MC."
+                    },
+                    26,
+                    31,
+                    32
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "What are you doing?"
+                    },
+                    27
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I just want to make sure you're happy, darling."
+                    },
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You do so much for me, I've got to make sure you're happy too."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We're just the perfect couple after all."
+                    },
+                    30
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Look at us, all lovey-dovey in public like this."
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I love the Revengers!"
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Can we go right away?"
+                    },
+                    35
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Of course you do!"
+                    },
+                    34
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know you so well darling, and I want to make you happy!"
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    36
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Hahaha, you're too silly!"
+                    },
+                    37
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We haven't even gone shopping yet!"
+                    },
+                    38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know you we're joking though."
+                    },
+                    39
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We can practically read each others' minds now."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "text": "Guy shakes his head."
+                    },
+                    41
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Girl",
+                        "text": "Do you know them?"
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Boy",
+                        "text": "Uh... Let's ignore them."
+                    },
+                    43
+                ],
+                [
+                    {
+                        "text": "Anger sprite on LoverLink."
+                    },
+                    44
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Hey, since we're sooo in love with each other..."
+                    },
+                    45
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We should hold hands as we walk around!"
+                    },
+                    46,
+                    47
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Stick out your hand."
+                    },
+                    48
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Isn't it a little early for that?"
+                    },
+                    58
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    49
+                ],
+                [
+                    {
+                        "text": "LoverLink moves immediately adjacent to MC."
+                    },
+                    50
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh, your hand is so warm...."
+                    },
+                    51
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And I can almost feel your heart beating when we're close like this..."
+                    },
+                    52
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I love you so much darling."
+                    },
+                    53
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I wish we could stay like this forever..."
+                    },
+                    54
+                ],
+                [
+                    {
+                        "text": "Sweat drop on girl."
+                    },
+                    55
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Girl",
+                        "text": "Geez, what are they doing?"
+                    },
+                    56
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Boy",
+                        "text": "....."
+                    },
+                    57
+                ],
+                [
+                    {
+                        "text": "Anger sprite on LoverLink x2 in a row for extra anger."
+                    },
+                    61
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know we haven't been together for that long darling."
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "But we both know how perfect we are together."
+                    },
+                    60
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So there's no need to hold back. It's OK to skip a few steps in this situation."
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    62
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh and I've got a special surprise for you..."
+                    },
+                    63
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "There's something special on sale today too..."
+                    },
+                    64
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So..."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "text": "LoverLink looks at other couple then back at MC."
+                    },
+                    66
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You'll get to help me pick out a swimsuit, OK?"
+                    },
+                    67
+                ],
+                [
+                    {
+                        "text": "Exclamation mark on everyone but LoverLink."
+                    },
+                    68
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You'll get to see me in all different kinds you know."
+                    },
+                    69
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I hope we find one you like!"
+                    },
+                    70
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Boy",
+                        "text": "Hey... Maybe we should go."
+                    },
+                    71
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Girl",
+                        "text": "Yeah, there's no reason to stick around here."
+                    },
+                    72
+                ],
+                [
+                    {
+                        "text": "Guy and Girl walk off frame."
+                    },
+                    73
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    77
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "Hah."
+                    },
+                    75
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Alright, there's nothing to do here anymore."
+                    },
+                    76,
+                    78,
+                    79
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "What about the swimsuit?"
+                    },
+                    90
+                ],
+                [
+                    {
+                        "text": "LoverLink lets go and walks a few steps in the direction they left."
+                    },
+                    74
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Do you want to talk?"
+                    },
+                    85
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Do you know them?"
+                    },
+                    80
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Huh?"
+                    },
+                    81
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "No, not at all."
+                    },
+                    82
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Well, enjoy the rest of your day or whatever."
+                    },
+                    89
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You think you might be starting to understand what's going on a little better."
+                    },
+                    84
+                ],
+                [
+                    {
+                        "text": "Rank up, then MC walks away."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    86
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What do you mean? We've been talking all this time."
+                    },
+                    87
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I can't spent every second with you, geez."
+                    },
+                    88
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Don't be so needy."
+                    },
+                    82
+                ],
+                [
+                    {
+                        "text": "LoverLink walks off."
+                    },
+                    83
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Geez, you really want to see me in a swimsuit so badly?"
+                    },
+                    91
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    92
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Just go look up pictures on the internet or whatever, perv."
+                    },
+                    82
+                ]
+            ]
         }
     },
     "finalpersona": {},
@@ -954,6 +1807,22 @@
     "pseudoname": "Lovesick Girl",
     "requiredPoints": {
         "1": {
+            "0": {
+                "acad": 1,
+                "charm": 1,
+                "courage": 1,
+                "points": 0
+            }
+        },
+        "2": {
+            "0": {
+                "acad": 1,
+                "charm": 1,
+                "courage": 1,
+                "points": 0
+            }
+        },
+        "3": {
             "0": {
                 "acad": 1,
                 "charm": 1,
