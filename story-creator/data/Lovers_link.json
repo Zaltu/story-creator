@@ -2267,7 +2267,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "Wow, what a prick."
-                    }
+                    },
+                    65
                 ],
                 [
                     {
@@ -2316,7 +2317,8 @@
                         "points": {},
                         "speaker": "LoversLink",
                         "text": "Wait, so... You're serious...?"
-                    }
+                    },
+                    69
                 ],
                 [
                     {
@@ -2410,6 +2412,66 @@
                     {
                         "text": "Rankup and end."
                     }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What do you know?"
+                    },
+                    66
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "He was... He Just..."
+                    },
+                    67
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    68
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Sorry..."
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Wait, no, I mean...!"
+                    },
+                    70
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...sigh..."
+                    },
+                    58
                 ]
             ]
         }
