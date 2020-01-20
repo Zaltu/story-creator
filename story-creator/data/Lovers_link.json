@@ -92,7 +92,7 @@
                         "emotion": "Normal",
                         "points": {},
                         "speaker": "LoversLink",
-                        "text": "My name's {lovername}."
+                        "text": "My name's {loverlink}."
                     },
                     9
                 ],
@@ -291,7 +291,7 @@
                         "emotion": "Normal",
                         "points": {},
                         "speaker": "Narrator",
-                        "text": "You got {lovername}'s phone number."
+                        "text": "You got {loverlink}'s phone number."
                     },
                     29
                 ],
@@ -552,7 +552,7 @@
                 ],
                 [
                     {
-                        "text": "LoverLink looks around."
+                        "text": "{loverLink} looks around."
                     },
                     16
                 ],
@@ -1298,7 +1298,7 @@
                         "emotion": "Happy",
                         "points": {},
                         "speaker": "LoversLink",
-                        "text": "I know you we're joking though."
+                        "text": "I know you were joking though."
                     },
                     39
                 ],
@@ -1626,7 +1626,7 @@
                         "angle": {},
                         "emotion": "Normal",
                         "points": {},
-                        "speaker": "Narrator",
+                        "speaker": "LoversLink",
                         "text": "Hah."
                     },
                     75
@@ -1750,7 +1750,7 @@
                         "emotion": "Normal",
                         "points": {},
                         "speaker": "LoversLink",
-                        "text": "I can't spent every second with you, geez."
+                        "text": "I can't spend every second with you, geez."
                     },
                     88
                 ],
