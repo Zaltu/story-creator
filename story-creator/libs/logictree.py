@@ -176,40 +176,41 @@ class MathGraph:
         If the number of global ways to reach j is equal to the number of ways in the subtree, that means
         every single way of reaching j is encompassed by the subtree, thus element j is uniquely dependant on
         element i.
-        ^ lmao that's so wrong.
 
-        county = Number of ways to reach j in the subtree
-        countx = Global number of ways to reach j
-        UD = Uniquely Dependant. List containing element indexes of uniquely dependant elements.
-        ignore = Special case:
-            When perusing the subtree, if a non-unique index is found we can be sure that any elements
-            accessible from that index are also not unique. Thus, we need to remove them from further
-            consideration when we check whether an element is accessible from the subtree.
-            Since the root of the tree is the starting point, if we are not considering the 'subtree of root'
-            (which would be the entire tree) then we must ignore any unique dependancies passing through root.
+        ^ LMAO THAT'S SO WRONG ^
+        Following that logic will assume that any time two potential "paths" converge where a single element
+        is in the full subtree of i, any elements solely depending on the point of convergence will be
+        considered unique dependent, though they're not. Like so:
+                1       i
+                2       3
+                ->      4
+                        5
+        Here 2 leads to 4, but 5 will be considered to be uniquly dependent on i because there's only one was
+        to reach it, despite it being reachable from 1/2. To my former self's credit though, it was a pretty
+        good try at memeing the system.
+
+        Reimplemented, this algorithm parses over every element of the full subtree of i. If there are any
+        elements that lead to any member of the subtree, that themselves are not in the subtree, then the
+        full subtree of that element is removed from the full subtree of i.
+
+        There is however the issue of accidentally considering the root of the subtree to not being uniquly
+        dependent on itself, which is an oxymoron in all cases, so we must make sure that we're ignoring i 
+        while processing any of these elements, whether in the subtree or full tree.
+
 
         :param int i: element of which to find the unique subtree
 
         :returns: UD, a list of the indexes of every element uniquely depedant on i, including i.
         :rtype: list
         """
-        countx = 0
-        county = 0
-
-        ud = []
-        ignore = [i]
         processed = set()
-        if i != 0:
-            # We don't want to consider anything solely accessible by root to be "part of the subtree".
-            # Root is a unique case.
-            ignore.append(0)
         fullsubtree = self.ywaysfromi(i, processed)
 
         for sindex in list(fullsubtree):
-            if sindex in ignore:
+            if sindex == i:
                 continue
             for gitem in self.items:
-                if gitem in ignore:
+                if gitem == i:
                     continue
                 if sindex in gitem and self.items.index(gitem) not in fullsubtree:
                     nonunique = self.ywaysfromi(sindex)
@@ -218,30 +219,6 @@ class MathGraph:
                         # existed in the non-unique subtree already was not considered part of the i subtree.
                         if nonuniqueindex in fullsubtree:
                             fullsubtree.remove(nonuniqueindex)
-
-
-        #for j in fullsubtree:
-        #    if j not in ignore:
-        #        for item in fullsubtree:
-        #            if item not in ignore and j in self.items[item]:
-        #                county += 1
-        #        for item in self.items:
-        #            if j in item:
-        #                countx += 1
-        #        if county == countx:
-        #            ud.append(j)
-        #        else:
-        #            if j != i:
-        #                ignore.append(j)
-        #                for ignoresub in self.ywaysfromi(j):
-        #                    if ignoresub not in ignore:
-        #                        ignore.append(ignoresub)
-        #    county = 0
-        #    countx = 0
-
-        #ud.append(i)
-        #if 0 in ud and i != 0:
-        #    ud.pop(0)
 
         return list(fullsubtree)
 
