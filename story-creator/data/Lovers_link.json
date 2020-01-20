@@ -2956,7 +2956,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "Let's enjoy ourselves as much as possible."
-                    }
+                    },
+                    61
                 ],
                 [
                     {
@@ -2965,7 +2966,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "If you're sure that's what you want."
-                    }
+                    },
+                    67
                 ],
                 [
                     {
@@ -2994,7 +2996,8 @@
                         "points": {},
                         "speaker": "LoversLink",
                         "text": "...Thanks..."
-                    }
+                    },
+                    60
                 ],
                 [
                     {
@@ -3046,6 +3049,86 @@
                         "text": "....."
                     },
                     38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know it's selfish of me, but let's make sure that guy knows what he did was wrong."
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yup!"
+                    },
+                    62
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And we can start by finally going on a real date!"
+                    },
+                    63
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'll make it up to you, I promise."
+                    },
+                    64
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Let me know whenever you're free."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Let's do it soon, OK?"
+                    },
+                    66
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'll see you around!"
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yeah..."
+                    },
+                    62
                 ]
             ]
         }
