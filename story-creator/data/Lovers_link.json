@@ -3473,7 +3473,309 @@
                         "points": {},
                         "speaker": "LoversLink",
                         "text": "Come on, help me find him. I think he went this way."
+                    },
+                    39
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We can't let him get away!"
+                    },
+                    40,
+                    43,
+                    46
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "We're going to miss the movie."
+                    },
+                    41
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Who cares about some stupid movie? Just watch it on Wetflix later!"
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's always about you, isn't it!"
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I thought we went over this."
+                    },
+                    44
+                ],
+                [
+                    {
+                        "text": "Anger sprite and animation on loverlink."
+                    },
+                    45
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I this, me that..."
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "What are you trying to do to him?"
+                    },
+                    47
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "What is it to you!?"
+                    },
+                    48
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I can do whatever I want!"
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Stop trying to control my life!"
+                    },
+                    50
+                ],
+                [
+                    {
+                        "text": "Slight camera dezoom to bring attention to the people around them. Cinematography ahoy!"
+                    },
+                    51
+                ],
+                [
+                    {
+                        "text": "Some speak sprites on people around them."
+                    },
+                    52
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Man",
+                        "text": "Goodness, having a quarrel like that in broad daylight."
+                    },
+                    53
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Child",
+                        "text": "Mommy, why is she yelling like that?"
+                    },
+                    54
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Woman",
+                        "text": "Let them be sweety, it's rude to stare."
+                    },
+                    55
+                ],
+                [
+                    {
+                        "text": "Distress sprite on loverlink."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Alright, I'll leave you alone then."
+                    },
+                    57
+                ],
+                [
+                    {
+                        "text": "MC turns around and starts walking away."
+                    },
+                    58
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Wait!"
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Please I... I didn't mean..."
+                    },
+                    60
+                ],
+                [
+                    {
+                        "text": "Crying animation on loverlink."
+                    },
+                    61
+                ],
+                [
+                    {
+                        "text": "Loverlink runs out of frame in the other direction."
+                    },
+                    62
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "...It looks like {loverlink} is hurting even more than she's letting on."
+                    },
+                    63
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You feel like you understand her a bit better now, despite the circumstance."
+                    },
+                    64
+                ],
+                [
+                    {
+                        "text": "Rankup"
                     }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    66
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "{loverlink} looks like she's about to cry."
+                    },
+                    56,
+                    67,
+                    69
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Do you want me to leave?"
+                    },
+                    68
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "No!"
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Umm... Haha... Darling..."
+                    },
+                    70
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Haha..."
+                    },
+                    71
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Just... Kidding..."
+                    },
+                    60
                 ]
             ]
         }
