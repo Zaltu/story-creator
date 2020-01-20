@@ -3131,6 +3131,351 @@
                     62
                 ]
             ]
+        },
+        "6_0": {
+            "id": "Lovers6_0",
+            "items": [
+                [
+                    {
+                        "text": "Starts outside the school gate."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I thought we could go see a movie."
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "That's, like, a normal couple thing, right?"
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Protectors of the Star System is in screening right now. How does that sound?"
+                    },
+                    4,
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Sure, that sounds like fun."
+                    },
+                    8
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I'd prefer The Clown..."
+                    },
+                    6
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh yeah, I've heard of that one."
+                    },
+                    7
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It doesn't really seem like something I'd like though... Sorry."
+                    },
+                    10
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's gotten great reviews online too."
+                    },
+                    9
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You can't always trust them, but films made by Amaze are generally fun to watch, at least."
+                    },
+                    10
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Anyway, the next viewing is in 30 minutes, and it'll take us 20 just to get there."
+                    },
+                    11
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "If we want good seats, we'd better leave now."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "text": "Loverlink and MC walk out of frame."
+                    },
+                    13
+                ],
+                [
+                    {
+                        "text": "Camera change to outside cinema, near entrance."
+                    },
+                    14
+                ],
+                [
+                    {
+                        "text": "Both walk into frame, distress sprite on both."
+                    },
+                    15
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Jeez, talk about a bad time for a train delay."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "The movie's about to start, we need to hurry!"
+                    },
+                    17
+                ],
+                [
+                    {
+                        "text": "Both rotate towards the entrance proper."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "text": "Guy walks by, barely in frame. Exclamation mark on loverlink."
+                    },
+                    19
+                ],
+                [
+                    {
+                        "text": "Loverlink takes one or two steps in his direction."
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Wait!"
+                    },
+                    21,
+                    22,
+                    23
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "The movie's about to start."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "You have to let him go."
+                    },
+                    27
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I thought this was our date."
+                    },
+                    30
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    25
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's always just ads at the start anyway, so it's fine!"
+                    },
+                    26
+                ],
+                [
+                    {
+                        "text": "Loverlink runs off after guy."
+                    },
+                    31
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You're right..."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh no, he dropped something!"
+                    },
+                    26
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    28
+                ],
+                [
+                    {
+                        "text": "Sweatdrop on MC."
+                    },
+                    32
+                ],
+                [
+                    {
+                        "text": "MC walks after them."
+                    },
+                    33
+                ],
+                [
+                    {
+                        "text": "Camera change to a different section of the bling center, not too far from the theatre."
+                    },
+                    34
+                ],
+                [
+                    {
+                        "text": "Loverlink looks around, guy is not there. Grumble sprite on loverlink."
+                    },
+                    35
+                ],
+                [
+                    {
+                        "text": "MC walks into frame and up to loverlink."
+                    },
+                    36
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Where could he have gone..."
+                    },
+                    37
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Oh there you are... Darling!"
+                    },
+                    38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Come on, help me find him. I think he went this way."
+                    }
+                ]
+            ]
         }
     },
     "finalpersona": {},
