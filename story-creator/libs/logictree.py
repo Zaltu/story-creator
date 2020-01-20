@@ -2,7 +2,6 @@
 This module defines the data structure used to handle the unidirectional, multi-input, potentially repeating
 graphs that are social links.
 """
-#pylint: disable=no-name-in-module
 from libs import action
 
 class MathGraph:
@@ -186,8 +185,8 @@ class MathGraph:
                 ->      4
                         5
         Here 2 leads to 4, but 5 will be considered to be uniquly dependent on i because there's only one was
-        to reach it, despite it being reachable from 1/2. To my former self's credit though, it was a pretty
-        good try at memeing the system.
+        to reach it (through 4), despite it being reachable from 1/2 and i/3. To my former self's credit
+        though, it was a pretty good try at memeing the system.
 
         Reimplemented, this algorithm parses over every element of the full subtree of i. If there are any
         elements that lead to any member of the subtree, that themselves are not in the subtree, then the
