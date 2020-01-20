@@ -176,6 +176,7 @@ class MathGraph:
         If the number of global ways to reach j is equal to the number of ways in the subtree, that means
         every single way of reaching j is encompassed by the subtree, thus element j is uniquely dependant on
         element i.
+        ^ lmao that's so wrong.
 
         county = Number of ways to reach j in the subtree
         countx = Global number of ways to reach j
@@ -196,37 +197,53 @@ class MathGraph:
         county = 0
 
         ud = []
-        ignore = []
+        ignore = [i]
         processed = set()
         if i != 0:
             # We don't want to consider anything solely accessible by root to be "part of the subtree".
             # Root is a unique case.
             ignore.append(0)
         fullsubtree = self.ywaysfromi(i, processed)
-        for j in fullsubtree:
-            if j not in ignore:
-                for item in fullsubtree:
-                    if item not in ignore and j in self.items[item]:
-                        county += 1
-                for item in self.items:
-                    if j in item:
-                        countx += 1
-                if county == countx:
-                    ud.append(j)
-                else:
-                    if j != i:
-                        ignore.append(j)
-                        for ignoresub in self.ywaysfromi(j):
-                            if ignoresub not in ignore:
-                                ignore.append(ignoresub)
-            county = 0
-            countx = 0
 
-        ud.append(i)
-        if 0 in ud and i != 0:
-            ud.pop(0)
+        for sindex in list(fullsubtree):
+            if sindex in ignore:
+                continue
+            for gitem in self.items:
+                if gitem in ignore:
+                    continue
+                if sindex in gitem and self.items.index(gitem) not in fullsubtree:
+                    nonunique = self.ywaysfromi(sindex)
+                    for nonuniqueindex in nonunique:
+                        # This if statement exists because there's a very high chance that most of what
+                        # existed in the non-unique subtree already was not considered part of the i subtree.
+                        if nonuniqueindex in fullsubtree:
+                            fullsubtree.remove(nonuniqueindex)
 
-        return ud
+
+        #for j in fullsubtree:
+        #    if j not in ignore:
+        #        for item in fullsubtree:
+        #            if item not in ignore and j in self.items[item]:
+        #                county += 1
+        #        for item in self.items:
+        #            if j in item:
+        #                countx += 1
+        #        if county == countx:
+        #            ud.append(j)
+        #        else:
+        #            if j != i:
+        #                ignore.append(j)
+        #                for ignoresub in self.ywaysfromi(j):
+        #                    if ignoresub not in ignore:
+        #                        ignore.append(ignoresub)
+        #    county = 0
+        #    countx = 0
+
+        #ud.append(i)
+        #if 0 in ud and i != 0:
+        #    ud.pop(0)
+
+        return list(fullsubtree)
 
     def ywaysfromi(self, i, processed=set()):  #pylint: disable=dangerous-default-value
         """
