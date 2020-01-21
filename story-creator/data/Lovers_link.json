@@ -3831,7 +3831,7 @@
                         "emotion": "Sad",
                         "points": {},
                         "speaker": "LoversLink",
-                        "text": "The reason I called you out here is, wel..."
+                        "text": "The reason I called you out here is, well..."
                     },
                     6
                 ],
@@ -4139,7 +4139,340 @@
                         "points": {},
                         "speaker": "LoversLink",
                         "text": "The truth is... Well..."
+                    },
+                    38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "He didn't actually cheat on me."
+                    },
+                    39
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "He wasn't trying to convince me to do anything either..."
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "He just... Slowly stopped going out with me."
+                    },
+                    41
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And one day, he said he wanted to break up."
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "That he just \"wasn't feeling it\" anymore..."
+                    },
+                    43
+                ],
+                [
+                    {
+                        "text": "Crying animation on loverlink."
+                    },
+                    44,
+                    45
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I'm sorry to hear that."
+                    },
+                    46
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "That's rough..."
+                    },
+                    46
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I didn't even do anything!"
+                    },
+                    47
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I was just happy to get to spend time with him!"
+                    },
+                    48
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I don't understand! What was I supposed to do differently!?"
+                    },
+                    49,
+                    50,
+                    52
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "You did what you could."
+                    },
+                    55
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "....."
+                    },
+                    51
+                ],
+                [
+                    {
+                        "text": "MC looks down."
+                    },
+                    58
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "You need to let go now."
+                    },
+                    53
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I don't-!"
+                    },
+                    54
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I don't... Want to hear that..."
+                    },
+                    60
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Then why wasn't it enough..."
+                    },
+                    56
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And I got you involved too..."
+                    },
+                    57
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You didn't deserve any of this."
+                    },
+                    61
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...I know..."
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "But that doesn't make it hurt less..."
+                    },
+                    72
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "In the end, all I've done is made it worse..."
+                    },
+                    61
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "So I'm sorry."
+                    },
+                    62
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I won't make you do anything anymore."
+                    },
+                    63
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And I understand if you don't want to talk to me either. This whole dating thing was kind of a sham anyway..."
+                    },
+                    64
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "But thanks..."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'm not sure what I would have done without you holding me back..."
+                    },
+                    66
+                ],
+                [
+                    {
+                        "text": "Loverlink gets up."
+                    },
+                    67
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I... *sniff* ...Need to go..."
+                    },
+                    68
+                ],
+                [
+                    {
+                        "text": "Loverlink runs out of frame."
+                    },
+                    69
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "It seems you've finally learned the truth behind {loverlink}'s problems."
+                    },
+                    70
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You feel you understand {loverlink} much better now."
+                    },
+                    71
+                ],
+                [
+                    {
+                        "text": "Rankup"
                     }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I just wanted to go back to the way things were..."
+                    },
+                    56
                 ]
             ]
         }
