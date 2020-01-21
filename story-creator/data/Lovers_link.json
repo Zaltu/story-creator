@@ -4475,6 +4475,713 @@
                     56
                 ]
             ]
+        },
+        "8_0": {
+            "id": "Lovers8_0",
+            "items": [
+                [
+                    {
+                        "text": "Loverlink is sitting in the same place you first met her."
+                    },
+                    1
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "You..."
+                    },
+                    2
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...You're... Back?"
+                    },
+                    3
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    4
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    5
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Why don't you sit down?"
+                    },
+                    6
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Or do you want to do something today?"
+                    },
+                    7,
+                    8,
+                    9
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "We never did watch that movie..."
+                    },
+                    15
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I was just looking for you."
+                    },
+                    12
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I was worried about you."
+                    },
+                    10
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I..."
+                    },
+                    11
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Sorry for making you worry."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I..."
+                    },
+                    13
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    14
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Hi..."
+                    },
+                    18
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Haha, I guess we didn't."
+                    },
+                    16
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I don't think it's playing anymore though."
+                    },
+                    17
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Sorry, I guess you really wanted to see it"
+                    },
+                    20
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Umm..."
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Do you want to get something to eat then?"
+                    },
+                    21
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...Umm..."
+                    },
+                    19
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Embarrassed",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "We're not too far from-"
+                    },
+                    22
+                ],
+                [
+                    {
+                        "text": "Loverlink turns her head to the side, exclamation sprite."
+                    },
+                    23
+                ],
+                [
+                    {
+                        "text": "Guy walks past, oblivious, and back out of frame."
+                    },
+                    24
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...From..."
+                    },
+                    25
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "{loverlink} seems to be struggling to speak."
+                    },
+                    26,
+                    27,
+                    28
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "From the cafe?"
+                    },
+                    42
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Are you going to chase him?"
+                    },
+                    35
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "....."
+                    },
+                    29
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...From the..."
+                    },
+                    30
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Cafe..."
+                    },
+                    31
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    32
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...I did it...."
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I didn't go after him."
+                    },
+                    34
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Haha, it's kind of sad that's such a big deal for me..."
+                    },
+                    47
+                ],
+                [
+                    {
+                        "text": "Loverlink turns around and takes a few steps towards where guy left."
+                    },
+                    36
+                ],
+                [
+                    {
+                        "text": "She stops, then turns around and goes to face the MC."
+                    },
+                    37
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "No, I won't, damnit!"
+                    },
+                    38
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I asked if you wanted to go to the cafe!"
+                    },
+                    39
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    40
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Sorry..."
+                    },
+                    41
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "But... I did it..."
+                    },
+                    33
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Surprised",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "YES!"
+                    },
+                    43
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Do you...."
+                    },
+                    44
+                ],
+                [
+                    {
+                        "text": "Loverlink gets up, looks in the direction that guy left, then back at MC."
+                    },
+                    45
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Do you... want to go?"
+                    },
+                    46
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    32
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know I need to move on eventually."
+                    },
+                    48
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "But I just can't bring myself to... believe it."
+                    },
+                    49
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It all happened so quickly."
+                    },
+                    50
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And even though it still hurts, it's like he's not affected at all."
+                    },
+                    51
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It just makes it worse..."
+                    },
+                    52
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "It's like we became strangers overnight, and I didn't even have time to say goodbye."
+                    },
+                    53,
+                    54
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "Maybe you should talk to him."
+                    },
+                    55
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "MC",
+                        "text": "I don't think he really meant to hurt you."
+                    },
+                    68
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I tried that already, he wouldn't listen..."
+                    },
+                    56
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "...Or..."
+                    },
+                    57
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I guess wasn't listening either..."
+                    },
+                    58
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    59
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Yeah, I'll talk to him. For real this time."
+                    },
+                    60
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I'm scared, but..."
+                    },
+                    61
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Angry",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I want to get this over with!"
+                    },
+                    62
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You can sense a strong resolve from {loverlink}."
+                    },
+                    63
+                ],
+                [
+                    {
+                        "text": "Rankup"
+                    },
+                    64
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Now that's settled..."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Happy",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Let's get some cake, ok?"
+                    },
+                    66
+                ],
+                [
+                    {
+                        "text": "MC nods, both walk out of frame. Fade to black."
+                    },
+                    67
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "Narrator",
+                        "text": "You enjoy some time chatting with {loverlink}."
+                    }
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    69
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I know..."
+                    },
+                    70
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Even if it ended up like this, I know he's not the kind of person to do something like that on purpose."
+                    },
+                    71
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Sad",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "And I guess... I wasn't really trying to listen to him when he told me..."
+                    },
+                    72
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    59
+                ]
+            ]
         }
     },
     "finalpersona": {},
