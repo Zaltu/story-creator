@@ -5667,7 +5667,8 @@
                         "points": {},
                         "speaker": "MC",
                         "text": "Are you sure that's what you want?"
-                    }
+                    },
+                    64
                 ],
                 [
                     {
@@ -5793,6 +5794,66 @@
                         "points": {},
                         "speaker": "LoversLink",
                         "text": "If I asked you, of course it's what I want."
+                    },
+                    53
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    65
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "Do you not want to?"
+                    },
+                    66
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I thought... You were definitely interested if you stuck with me this entire time."
+                    },
+                    67
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I guess if I'm honest, I hadn't really considered myself."
+                    },
+                    68
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "....."
+                    },
+                    69
+                ],
+                [
+                    {
+                        "angle": {},
+                        "emotion": "Normal",
+                        "points": {},
+                        "speaker": "LoversLink",
+                        "text": "I think... We would go well together."
                     },
                     53
                 ]
